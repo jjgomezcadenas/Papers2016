@@ -87,15 +87,15 @@ increasing role in radiotherapy treatment planning and chemotherapy monitoring.
 
 \begin{figure}[!htb]
 	\centering
-%	\includegraphics[scale=0.3]{../img/PET-schema.png}
-	\includegraphics[width=1.\textwidth]{../img/PET-schema.png}
+	\includegraphics[scale=0.175]{../img/PET-schema.png}
+%	\includegraphics[width=1.\textwidth]{../img/PET-schema.png}
 	\caption{\label{fig.pet}: Principle of operation of PET. }
 \end{figure}
 
 \begin{figure}[!htb]
 	\centering
-%	\includegraphics[scale=1.0]{../img/PET-detectorsystem_2.png}
-	\includegraphics[width=1.\textwidth]{../img/PET-detectorsystem_2.png}
+	\includegraphics[scale=0.6]{../img/PET-detectorsystem_2.png}
+%	\includegraphics[width=1.\textwidth]{../img/PET-detectorsystem_2.png}
 	\caption{\label{fig.det}: A PET ring made of segmented solid scintillators. }
 \end{figure}
 
@@ -135,8 +135,8 @@ the longitudinal coordinate goes as $\sim t/\sqrt{12}$, where $t$~ is the detect
 
 \begin{figure}[!bthp]
 	\centering
-%	\includegraphics[scale=0.9]{../img/MAPD_coincidencecategories.jpg}
-	\includegraphics[width=.9\textwidth]{../img/MAPD_coincidencecategories.jpg}
+	\includegraphics[scale=0.6]{../img/MAPD_coincidencecategories.jpg}
+%	\includegraphics[width=.9\textwidth]{../img/MAPD_coincidencecategories.jpg}
 	\caption{\label{fig.coi} Coincidence detection principle in a PET detector.}
 \end{figure}
 
@@ -222,8 +222,8 @@ To summarize, the requirements to achieve high photon sensitivity are:
 
 \begin{figure}[!bthp]
 	\centering
-%	\includegraphics[scale=1.0]{../img/range.png}
-	\includegraphics[width=1.\textwidth]{../img/range.png}
+	\includegraphics[scale=0.8]{../img/range.png}
+%	\includegraphics[width=1.\textwidth]{../img/range.png}
 	\caption{\label{fig.range} Positrons travel a distance before annihilation in the absorber and the distance increases with positron energy. Since positrons with different energies travel in zigzag directions, the effective range is the shortest distance between the nucleus and the direction of 511 keV photons. This effective range degrades the spatial resolution of the PET scanner.}
 \end{figure}
 
@@ -240,8 +240,8 @@ A relevant fact to take into account when designing a PET scanner is the intrins
 
 \begin{figure}[!bthp]
 	\centering
-%	\includegraphics[scale=0.8]{../img/MAPD_tofprinciple.jpg}
-	\includegraphics[width=1.\textwidth]{../img/MAPD_tofprinciple.jpg}
+	\includegraphics[scale=0.5]{../img/MAPD_tofprinciple.jpg}
+%	\includegraphics[width=1.\textwidth]{../img/MAPD_tofprinciple.jpg}
 	\caption{\label{fig.tof} Time of flight principle in a PET detector.}
 \end{figure}
 
@@ -266,8 +266,8 @@ conventional PET, which is of the order of a few mm. A $\Delta t$~resolution of 
 
 \begin{figure}[!bhtp]
 	\centering
-%	\includegraphics[scale=5]{../img/TOFPET.jpg}
-	\includegraphics[width=1.\textwidth]{../img/TOFPET.jpg}
+	\includegraphics[scale=3]{../img/TOFPET.jpg}
+%	\includegraphics[width=.5\textwidth]{../img/TOFPET.jpg}
 	\caption{\label{fig.tile} TOF versus conventional PET. }
 \end{figure}
 
@@ -353,8 +353,8 @@ PETALO (Positron Electron TOF Apparatus base on Liquid xenOn) is a TOF--capable,
 
 \begin{figure}[!htbp]
 	\centering
-	%\includegraphics[scale=0.6]{../img/LXSC2.pdf}
-	\includegraphics[width=.5\textwidth]{../img/LXSC2.pdf}
+	\includegraphics[scale=0.6]{../img/LXSC2.pdf}
+	%\includegraphics[width=.5\textwidth]{../img/LXSC2.pdf}
 	\caption{\label{fig.box} The LXSC instruments the entry and exit faces of the box (relative to the photon line of flight) with silicon photomultipliers (SiPMs), which can be eventually coated with a wavelength shifter, tetraphenyl butadiene (TPB). The non-instrumented faces are covered by reflecting Teflon (optionally also coated with TPB). The shape and the size of the LXSC can be adapted to the application. A possible configuration is a 5x5x5 cm box.}
 \end{figure}
 
@@ -373,10 +373,12 @@ An initial study of the expected performance of the LXSC defined above (called t
 \begin{figure}[!htb]
 	\centering		
 		\subfloat[LXSC2, $x$ coordinate]{
-			\includegraphics[width=.49\textwidth]{../img/eposx_264.pdf}
+			\includegraphics[scale=0.3]{../img/eposx_264.pdf}
+%			\includegraphics[width=.49\textwidth]{../img/eposx_264.pdf}
 			\label{fig.eposx264}		}
 		\subfloat[LXSC2, $z$ coordinate]{
-			\includegraphics[width=.49\textwidth]{../img/eposz_264.pdf}
+		        \includegraphics[scale=0.3]{../img/eposz_264.pdf}
+%			\includegraphics[width=.49\textwidth]{../img/eposz_264.pdf}
 			\label{fig.eposz264}
 		}
 	\caption{\label{fig.energyDep2} Difference between the reconstructed energy and the average energy ($\Delta E$) as a function of one coordinate. (a) Energy dependence with the transverse coordinate ($x$) in LXSC2. (b) Energy dependence with the longitudinal coordinate ($z$) in LXSC2. For interpretation of the references to color in this figure legend, the reader is referred to the web version of this article.}
@@ -416,17 +418,27 @@ The effect of the SiPMs needs to be carefully measured. The time jitter introduc
 
 
 \section{Summary and outlook}\label{sec.conclu}
+
 We have presented PETALO, a PET scanner based in the LXSC, a compact, homogenous and highly efficient liquid xenon cell, which constitutes the apparatus building block. PETALO exploits the high yield and fast decay constant of LXe, to achieve good energy and spatial resolution and excellent CRT. Our Monte Carlo calculations show that an energy resolution of 12\% FWHM, an spatial resolution of 2 mm FWHM (in the three coordinates) and a CRT better than 80 ps can be achieved. 
 
 The main application of PET to medicine is oncology. A typical dose of FDG used in an oncological scan has an effective radiation dose of 14 mSv, equivalent to about 5 years of dose by background radiation (combining natural and artificial sources). It follows that one of the important issues in PET applications is to reduce the FDG dose as much as possible, which, in turn requires an axial coverage as large as possible. Today's scanner have axial lengths of 15-25 cm. A larger scanner improves the solid angle, resulting in a larger acceptance and therefore allowing a dose reduction. Unfortunately, {\bf the cost of current PET scanners is very high}, limiting their dimensions, and in particular its axial length. The fact that  individual PET scans are more expensive than ``conventional'' imaging with computed tomography (CT) and magnetic resonance imaging (MRI) limits also their use in clinical diagnose. {\bf Reducing costs of PET scanners is, therefore, a major priority to facilitate the expansion of the technology}. Conversely, the combination of PET with CT and MRI often leads to much improved scans, since the structural information offered by CT and MRI can be combined with the functional information offered by PET. 
 
-PET neuroimaging uses the fact that the brain is an avid user of glucose, and since brain pathologies such as Alzheimer's disease greatly decrease brain metabolism of glucose, standard FDG-PET of the brain, which measures regional glucose use, may also be successfully used to differentiate Alzheimer's disease from other dementing processes, and also to make early diagnosis of Alzheimer's disease. Neuroimaging requires images as clear as possible, and therefore high--performance PET scanners fully compatible with MRI (thus capable of operating in very intense, highly variable magnetic fields). Using time-of-flight (TOF) information is one of the best ways of boosting performance, insofar as the sensitivity of the scanner improves with $D/CTR$~, where $D$~is the diameter of the object being imaged (e.g., the head). An order of magnitude improvement in sensitivity can be reached by using a PETALO scanner with a CTR of 100 ps. 
+PET neuroimaging uses the fact that the brain is an avid user of glucose, and since brain pathologies such as Alzheimer's disease greatly decrease brain metabolism of glucose, standard FDG-PET of the brain, which measures regional glucose use, may also be successfully used to differentiate Alzheimer's disease from other dementing processes, and also to make early diagnosis of Alzheimer's disease. Neuroimaging requires images as clear as possible, and therefore high--performance PET scanners fully compatible with MRI (thus capable of operating in very intense, highly variable magnetic fields). Using time-of-flight (TOF) information is one of the best ways of boosting performance, insofar as the sensitivity of the scanner improves with $D/CRT$~, where $D$~is the diameter of the object being imaged (e.g., the head). An order of magnitude improvement in sensitivity can be reached by using a PETALO scanner with a CRT of 100 ps. 
 
-A PETALO scanner intended as a large acceptance ``full body'' PET, of $\sim$ 150 cm axial length and some 60-80 cm diameter could be built stacking 30 rings, each one made of about 40 large cells of $5 \times 5 \times 5$~cm$^3$~with (relatively) sparse SiPM instrumentation (32 SiPM per face, for a total of 64 SiPM per LXSC). The scanner would have lower cost (due to the comparatively low cost of LXe, and the sparse instrumentation) and better sensitivity (due to the  improved CTR) than a LSO scanner.  
+A PETALO scanner intended as a large acceptance ``full body'' PET, of $\sim$ 150 cm axial length and some 60-80 cm diameter could be built stacking 30 rings, each one made of about 40 large cells of $5 \times 5 \times 5$~cm$^3$~with (relatively) sparse SiPM instrumentation (32 SiPM per face, for a total of 64 SiPM per LXSC). The scanner would have lower cost (due to the comparatively low cost of LXe, and the sparse instrumentation) and better sensitivity (due to the  improved CRT) than a LSO scanner.  
 
-A PETALO scanner intended for neuroimaging can increase the number of SiPMs, reduce their size and implement VUV sensitive devices to optimize the energy resolution and the spatial resolution, while aiming to a  CTR  better than 80 ps. Such a device would be a true breakthrough with respect to the state-of-the-art in brain scanners. 
+A PETALO scanner intended for neuroimaging can increase the number of SiPMs, reduce their size and implement VUV sensitive devices to optimize the energy resolution and the spatial resolution, while aiming to a  CRT  better than 80 ps. Such a device would be a true breakthrough with respect to the state-of-the-art in brain scanners. 
 
 Last but not least, the PETALO technology is expected to be fully compatible with MRI, thus making it suitable for combined MRI-PET scanners. 
+
+To summarize, the main characteristics of PETALO which makes it competitive with the currently used detectors are:
+
+\begin{itemize}
+\item The high yield and fast decay constant of LXe.
+\item The use of SiPMs to detect scintillation light.
+\item The low cost of the materials.
+\end{itemize}
+
 
 
 \section*{}
