@@ -43,7 +43,7 @@
 
 \begin{frontmatter}
 
-\title{PETALO, a positron emission TOF apparatus using liquid xenon}
+\title{PETALO, a positron emission time-of-flight apparatus using liquid xenon}
 %\tnotetext[mytitlenote]{Fully documented templates are available in the elsarticle package on \href{http://www.ctan.org/tex-archive/macros/latex/contrib/elsarticle}{CTAN}.}
 
 %% Group authors per affiliation:
@@ -63,7 +63,7 @@
 %\address[mysecondaryaddress]{360 Park Avenue South, New York}
 
 \begin{abstract}
-We describe a new Positron Emission TOF Apparatus using Liquid xenOn (PETALO). The detector is based in the Liquid Xenon Scintillating Cell (LXSC). The cell shape and dimensions  can be optimised depending on the intended application. In its simplest form, the LXSC is a box in which two faces are covered by SiPMs and the others by a reflecting material such as Teflon. The LXSC is a compact, homogenous and highly efficient detector which shares many of the desirable properties of monolithic crystals, with the added advantage of high yield and fast scintillation offered by liquid xenon. Our initial studies suggest that good energy and spatial resolution comparable with that achieved by LYSO crystals can be obtained with a detector based in LXSCs. In addition, the system can potentially achieve an excellent coincidence resolution time (CRT) of better than 100 ps. 
+We describe a new positron emission time-of-flight apparatus using liquid xenon. The detector is based in a liquid xenon scintillating cell. The cell shape and dimensions can be optimised depending on the intended application. In its simplest form, the liquid xenon scintillating cell is a box in which two faces are covered by silicon photomultipliers and the others by a reflecting material such as Teflon. It is a compact, homogenous and highly efficient detector which shares many of the desirable properties of monolithic crystals, with the added advantage of high yield and fast scintillation offered by liquid xenon. Our initial studies suggest that good energy and spatial resolution comparable with that achieved by lutetium oxyorthosilicate crystals can be obtained with a detector based in liquid xenon scintillating cells. In addition, the system can potentially achieve an excellent coincidence resolving time of better than 100 picoseconds. 
 \end{abstract}
 
 \begin{keyword}
@@ -87,28 +87,30 @@ increasing role in radiotherapy treatment planning and chemotherapy monitoring.
 
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[scale=0.3]{../img/PET-schema.png}
+%	\includegraphics[scale=0.3]{../img/PET-schema.png}
+	\includegraphics[width=1.\textwidth]{../img/PET-schema.png}
 	\caption{\label{fig.pet}: Principle of operation of PET. }
 \end{figure}
 
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[scale=1.0]{../img/PET-detectorsystem_2.png}
+%	\includegraphics[scale=1.0]{../img/PET-detectorsystem_2.png}
+	\includegraphics[width=1.\textwidth]{../img/PET-detectorsystem_2.png}
 	\caption{\label{fig.det}: A PET ring made of segmented solid scintillators. }
 \end{figure}
 
 The principle of operation (Figure \ref{fig.pet}) relies in injecting into the patient a  
-biologically active molecule doped with a radioactive isotope, called tracer (a standard tracer is FDG, formed substituting an atom of oxygen by the isotope \FDG\ in a glucose molecule). The radionuclide decays and the resulting positrons
+biologically active molecule doped with a radioactive isotope, called tracer (a standard tracer is fluorodeoxyglucose, FDG, formed substituting an atom of oxygen by the isotope \FDG\ in a glucose molecule). The radionuclide decays and the resulting positrons
 subsequently annihilate with electrons after traveling a short distance within the subject.
 Each annihilation produces two 511 keV photons emitted most of the time in opposite
 directions and these photons are registered by a detection system. The signal of each photon
 from every pair coincidence event is processed individually for spatial, energy, and arrival
 time information. For a pair coincidence event, if the energy of two photons stays within a
-preset energy window, of the order of 20--30\% full-width-half-maximum (FWHM) for commercial systems, centered on the 511keV photopeak, and the timing difference stays within a preset time window (typically of up to some 10 ns), a
+preset energy window, of the order of 20--30\% full-width-half-maximum (FWHM) for commercial systems, centered on the 511 keV photopeak, and the timing difference stays within a preset time window (typically of up to some 10 ns), a
 coincidence event will be registered and constitutes a line-of-response (LOR) for image
 reconstruction.
 
-In this paper we propose a (Positron Electron TOF Apparatus based on Liquid xenOn), {\bf PETALO}. The system is based in a very homogenous and compact detection cell (the Liquid Xenon Scintillating Cell, or LXSC), which captures with high efficiency the copious scintillation light produced in liquid xenon (LXe) as a response to the interaction of a 511 keV gamma.  the LXSC is readout by SiPMs connected to specialized ASICs optimized for excellent timing resolution. The high yield available in LXe, coupled to the fact that cryogenic operation of SiPMs eliminates the leading source of electronic noise in this devices (dark current) guarantees good energy and spatial resolution, while the fast scintillation time of LXe, combined with the homogeneity of the cell, guarantees a very low intrinsic CRT.
+In this paper we propose a (Positron Electron Time-of-flight Apparatus based on Liquid xenOn), {\bf PETALO}. The system is based in a very homogenous and compact detection cell (the Liquid Xenon Scintillating Cell, or LXSC), which captures with high efficiency the copious scintillation light produced in liquid xenon (LXe) as a response to the interaction of a 511 keV gamma.  The LXSC is read out by SiPMs connected to specialized ASICs optimized for excellent timing resolution. The high yield available in LXe, coupled to the fact that cryogenic operation of SiPMs eliminates the leading source of electronic noise in this devices (dark current) guarantees good energy and spatial resolution, while the fast scintillation time of LXe, combined with the homogeneity of the cell, guarantees a very low intrinsic coincidence resolving time (CRT).
 
 This paper is organised as follows. In section \ref{sec.det} we review the properties of the detectors used for PET scanners. In section \ref{sec.signalAndNoise} we describe signal and noise in PET reconstruction. In section \ref{sec.performance} we discuss the factors that determine the performance of PET scanners. In section \ref{sec.LXe} we review the relevant properties of liquid xenon as scintillating material. In section \ref{sec.petalo} we describe the characteristics and features of the PETALO concept. In section \ref{sec.conclu} we conclude. 
 
@@ -119,21 +121,22 @@ The physical properties that define a detector suitable for a PET scanner are:
 {\bf Attenuation length ($\lambda$)}, which sets the scale of the length (across the photon line of flight) that the detector has to have in order to stop most of the incoming radiation.
 {\bf Density ($\rho$)}, which is related with the total size and weight of the detector.
 {\bf Photon yield per keV ($Y$)}, which must be as high as possible to record large signals. 
-{\bf Refraction index ($r$)}, which must be as close as possible to the refraction index of photodetectors (glass in case of PMTs, $Si_3N_4$~ and $SiO_2$ layers for passivation and protection in case of semiconductor devices such as APDs and SiPMs). 
+{\bf Refraction index ($r$)}, which must be as close as possible to the refraction index of the material of the photodetectors, which is glass in the case of photomultipliers (PMTs), and Si$_3$N$_4$~ and SiO$_2$ layers for passivation and protection in the case of semiconductor devices such as avalanche photodiodes (APDs) and silicon photomultipliers (SiPMs). 
 {\bf Energy resolution at 511 keV ($\sigma_E$)}, which must be as good as possible. 
 {\bf Transverse spatial resolution ($\sigma_T$)} (relative to the photon line of flight), which in turn depends on the photon yield and the granularity of the readout sensors.
-{\bf Longitudinal spatial resolution ($\sigma_L$)}, important to minimize the so-called parallax error and crucial to achieve a good coincidence resolving time (CRT).   
-{\bf Scintillation decay time ($\tau$)}, which must be as short a possible, to maximize the number of events acquired per unit time and to minimize the window used to correlate events in different crystals. In addition, if the system has very good time resolution (in the range of few hundred picoseconds) time-of-flight measurements (TOF) are possible. 
+{\bf Longitudinal spatial resolution ($\sigma_L$)}, important to minimize the so-called parallax error and crucial to achieve a good CRT.   
+{\bf Scintillation decay time ($\tau$)}, which must be as short a possible, to maximize the number of events acquired per unit time and to minimize the window used to correlate events in different crystals. In addition, if the system has very good time resolution (in the range of few hundred picoseconds) TOF measurements are possible. 
 
-Most modern PETs are built as rings using monolithic or segmented solid scintillating detectors read out by light sensitive detectors such as photomultipliers (PMTs), or silicon photomultipliers (SiPMs) (Figure \ref{fig.det}). Many of the high-end scanners use lutetium oxyorthosilicate (LSO)\footnote{LYSO (or lutetium-yttrium oxyorthosilicate) is also widely used. Both materials are very similar. In the rest of this document we will refer, for definiteness, to LSO.}, which is characterized by an {\bf attenuation length of 12 mm} to 511 keV photons, a  {\bf light yield of 26 photons per keV}, and a {\bf scintillation decay time of 40 ns}. This three parameters, essential for the performance of a PET scanner, result in an {\bf energy resolution} of typically 10-15 \% FWHM; a {\bf spatial resolution} of the order of 2-3 mm FWHM for the transverse coordinates. This is often achieved using segmented detectors read out by SiPMs. For example, for detectors of $3 \times 3$~mm$^2$~cross section, the rms resolution in the transverse coordinates is $\sim 3/\sqrt{12}$~mm, or about 2 mm FWHM. The error in 
-the longitudinal coordinate goes as $\sim t/\sqrt{12}$, where $t$~ is the detector thickness. For $t \sim 20$~mm (enough to stop around 80\% of the incoming gammas), the rms error is 5.8 mm (13.3 mm FWHM). Finally, the {\bf coincidence resolving time} CRT measured in the laboratory is of the order of 200 ps (for systems at ambient temperature) and 500-600 ps for commercial devices.
+Most modern PETs are built as rings using monolithic or segmented solid scintillating detectors read out by light sensitive detectors such as PMTs, or SiPMs)(Figure \ref{fig.det}). Many of the high-end scanners use lutetium oxyorthosilicate (LSO)\footnote{LYSO (or lutetium-yttrium oxyorthosilicate) is also widely used. Both materials are very similar. In the rest of this document we will refer, for definiteness, to LSO.}, which is characterized by an {\bf attenuation length of 12 mm} to 511 keV photons, a  {\bf light yield of 26 photons per keV}, and a {\bf scintillation decay time of 40 ns}. This three parameters, essential for the performance of a PET scanner, result in an {\bf energy resolution} of typically 10-15 \% FWHM; a {\bf spatial resolution} of the order of 2-3 mm FWHM for the transverse coordinates. This is often achieved using segmented detectors read out by SiPMs. For example, for detectors of $3 \times 3$~mm$^2$~cross section, the rms resolution in the transverse coordinates is $\sim 3/\sqrt{12}$~mm, or about 2 mm FWHM. The error in 
+the longitudinal coordinate goes as $\sim t/\sqrt{12}$, where $t$~ is the detector thickness. For $t \sim 20$~mm (enough to stop around 80\% of the incoming gammas), the rms error is 5.8 mm (13.3 mm FWHM). Finally, the {\bf coincidence resolving time} measured in the laboratory is of the order of 200 ps (for systems at ambient temperature) and 500-600 ps for commercial devices.
 
 \section{Signal and noise in PET reconstruction}
 \label{sec.signalAndNoise}
 
 \begin{figure}[!bthp]
 	\centering
-	\includegraphics[scale=0.9]{../img/MAPD_coincidencecategories.jpg}
+%	\includegraphics[scale=0.9]{../img/MAPD_coincidencecategories.jpg}
+	\includegraphics[width=.9\textwidth]{../img/MAPD_coincidencecategories.jpg}
 	\caption{\label{fig.coi} Coincidence detection principle in a PET detector.}
 \end{figure}
 
@@ -219,7 +222,8 @@ To summarize, the requirements to achieve high photon sensitivity are:
 
 \begin{figure}[!bthp]
 	\centering
-	\includegraphics[scale=1.0]{../img/range.png}
+%	\includegraphics[scale=1.0]{../img/range.png}
+	\includegraphics[width=1.\textwidth]{../img/range.png}
 	\caption{\label{fig.range} Positrons travel a distance before annihilation in the absorber and the distance increases with positron energy. Since positrons with different energies travel in zigzag directions, the effective range is the shortest distance between the nucleus and the direction of 511 keV photons. This effective range degrades the spatial resolution of the PET scanner.}
 \end{figure}
 
@@ -232,15 +236,16 @@ The spatial resolution of a PET scanner is a measure of the ability of the devic
 
 A relevant fact to take into account when designing a PET scanner is the intrinsic limitation introduced by the noncollinearity effect, which in turn sets the scale for the detector resolution. Since errors add quadratically, a detector resolution much smaller than the resolution introduced by noncollinearity does not bring any substantial benefit to the system. Thus, while small 10--20 cm scanners such as small animal PETs can aim for detector sub-mm resolution, the detector resolution of a large system does not need to be much better than 1--2 mm. 
 
-\subsection*{Time of flight (TOF) application in a PET scanner}
+\subsection*{Time of flight application in a PET scanner}
 
 \begin{figure}[!bthp]
 	\centering
-	\includegraphics[scale=0.8]{../img/MAPD_tofprinciple.jpg}
-	\caption{\label{fig.tof} Time of flight (TOF) principle in a PET detector.}
+%	\includegraphics[scale=0.8]{../img/MAPD_tofprinciple.jpg}
+	\includegraphics[width=1.\textwidth]{../img/MAPD_tofprinciple.jpg}
+	\caption{\label{fig.tof} Time of flight principle in a PET detector.}
 \end{figure}
 
-A time-of-flight (TOF) PET scanner takes advantage of the difference in arrival times of two photons from the same annihilation event to infer spatial information of this event. 
+A TOF PET scanner takes advantage of the difference in arrival times of two photons from the same annihilation event to infer spatial information of this event. 
 
 To understand the principle of TOF applied to PET is important to recall that light in vacuum travels 30 cm in 1 ns. Consider the situation illustrated in Fig.~\ref{fig.tof}. In principle one can measure the point of emission along the LOR by taking the time of flight difference between the arrival of the two photons. Since:
 \begin{equation}
@@ -261,7 +266,8 @@ conventional PET, which is of the order of a few mm. A $\Delta t$~resolution of 
 
 \begin{figure}[!bhtp]
 	\centering
-	\includegraphics[scale=5]{../img/TOFPET.jpg}
+%	\includegraphics[scale=5]{../img/TOFPET.jpg}
+	\includegraphics[width=1.\textwidth]{../img/TOFPET.jpg}
 	\caption{\label{fig.tile} TOF versus conventional PET. }
 \end{figure}
 
@@ -273,7 +279,7 @@ conventional PET, which is of the order of a few mm. A $\Delta t$~resolution of 
 
 In a TOF-PET scanner one uses good time-of-flight resolution to reduce the number of random coincidences, as illustrated in Fig.~\ref{fig.tile}. The principle is as follows. In a conventional PET without TOF one does not localize the emission point along the LOR. By collecting all possible LORs around the object (full angular coverage) and assuming uniform probability of the emission points lying along the full length of the LORs (and within object boundary), it is mathematically possible to reconstruct the emission object accurately. The knowledge of the emission point locations along the LORs is not necessary to reconstruct the emission object. However, by assuming uniform probability of event location along the full LOR length, noise from different emission events gets forward and back projected during image reconstruction over many image voxels leading to increased noise correlation. Hence, the image signal-to-noise ratio (SNR) gets reduced.
 
-In TOF-PET the difference in the arrival times $(t_2 - t_1)$ of the two photons is measured with a precision $\Delta t$~(called coincidence resolving time, CRT) that helps localize the emission point along the LOR within a small region of the object. The uncertainty in this localization is determined by the CRT. The corresponding uncertainty in spatial localization $\Delta x$~ along the LOR is given by 
+In TOF-PET the difference in the arrival times $(t_2 - t_1)$ of the two photons is measured with a precision $\Delta t$~(the CRT) that helps localize the emission point along the LOR within a small region of the object. The uncertainty in this localization is determined by the CRT. The corresponding uncertainty in spatial localization $\Delta x$~ along the LOR is given by 
 $\Delta x=c \times \Delta t/2$. As previously noted, if $\Delta x$~ is the same or smaller than the detector spatial resolution, then in principle image reconstruction is not needed. Typically this spatial localization, however, is more than one order of magnitude worse than the detector spatial resolution, and hence image reconstruction is still necessary to produce tomographic images. However, during reconstruction, noise from different events is now forward and back projected over only a limited number of image voxels as defined by the spatial uncertainty, leading to reduced noise correlations and improved image signal-to-noise resolution.
 %  as illustrated in  Fig.~\ref{fig.tile}, panel D.
 %
@@ -327,7 +333,7 @@ In its liquid phase (at a temperature of 165 K and atmospheric pressure) LXe has
 \item {The cost} of LXe is 20\% of the cost of LSO per detector unit. 
  \end{enumerate}
 
-The first idea of using a LXeTPC for PET was proposed in 1993 by Chepel \cite{chepelFirst}. 
+The first idea of using a LXe time projection chamber for PET was proposed in 1993 by Chepel \cite{chepelFirst}. 
 %The proposed detector was a LXe multi-wire detector consisting of six ionisation cells, each formed by two parallel cathode plates with a multi-wire anode in the middle. 
 %Subsequent R\&D is documented in \footnote{{\em Chepel, V. Y. et al.}, 1995, Nucl. Instrum. Methods A
 %367, 58; {\em Chepel, V. Y. et al.}, 1994, Nucl. Instrum. Methods
@@ -337,7 +343,7 @@ The first idea of using a LXeTPC for PET was proposed in 1993 by Chepel \cite{ch
 %1 KV/cm). Since $\lambda = 3$.6~cm the practical length of a LXe cell (along the photon line of flight) must be of 5 cm to contain 80 \% of the photons. This, in turn, implies drifting times of 25 $\mu$s, which limits the interaction rate that can be recorded by the cell to  
 %$\sim10^5 s^{-1}$, and therefore imposes a low-rate PET with a limited range of applications. 
 %
-The possibility of building a LXe PET (with TOF capabilities), based on the excellent properties of LXe as scintillator, was first suggested by Lavoie in 1976 \cite{lavoie}, and the study of this type of PET was carried out by the Waseda group \cite{Doke1,Nishikido2,Nishikido1}. The Waseda prototype was based in LXe cells read out by VUV-sensitive PMTs. In those cells one of the sides was left instrumented. The relatively poor performance of the system can be attributed in part to the use of PMTs and in part to the partial lack of instrumentation which affected both the energy and the time resolution. In spite of this limitations 
+The possibility of building a LXe PET (with TOF capabilities), based on the excellent properties of LXe as scintillator, was first suggested by Lavoie in 1976 \cite{lavoie}, and the study of this type of PET was carried out by the Waseda group \cite{Doke1,Nishikido2,Nishikido1}. The Waseda prototype was based in LXe cells read out by VUV-sensitive PMTs. In those cells one of the sides was left uninstrumented. The relatively poor performance of the system can be attributed in part to the use of PMTs and in part to the partial lack of instrumentation which affected both the energy and the time resolution. In spite of this limitations 
 %The PMTs, although sensitive to the VUV light emitted by xenon had low quantum efficiencies (in the range 5-25 \%), and their rather large size compared with the size of the cell ($18\times 18$~mm$^2$) introduced significant geometrical effects which were difficult to correct. As a result of the above effects combined the energy resolution was of the same order than that of conventional SSDs. The space resolution was rather good, in the range of 2-3 mm, but only in the central volume of the cell (a cube of 5 mm size), and deteriorated rapidly in the borders, due to the space corrections introduced by the (relatively) large PMTs. 
 the CRT achieved in the central volume of the prototype was excellent, of the order of 260 ps, showing the enormous potential of the technology for PET application. 
 
@@ -347,32 +353,33 @@ PETALO (Positron Electron TOF Apparatus base on Liquid xenOn) is a TOF--capable,
 
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[scale=0.6]{../img/LXSC2.pdf}
-	\caption{\label{fig.box} The Liquid Xenon Scintillating Cell (LXSC) instruments the entry and exit faces of the box (relative to the photon line of flight) with silicon photomultipliers (SiPMs), which can be eventually coated with a wavelength shifter, tetraphenyl butadiene (TPB). The non-instrumented faces are covered by reflecting Teflon (optionally also coated with TPB). The shape of the LXSC can be adapted to the application. }
+	%\includegraphics[scale=0.6]{../img/LXSC2.pdf}
+	\includegraphics[width=.5\textwidth]{../img/LXSC2.pdf}
+	\caption{\label{fig.box} The LXSC instruments the entry and exit faces of the box (relative to the photon line of flight) with silicon photomultipliers (SiPMs), which can be eventually coated with a wavelength shifter, tetraphenyl butadiene (TPB). The non-instrumented faces are covered by reflecting Teflon (optionally also coated with TPB). The shape and the size of the LXSC can be adapted to the application. A possible configuration is a 5x5x5 cm box.}
 \end{figure}
 
 A drawing of the LXSC is shown in Fig.~\ref{fig.box}. In its simpler version is a box in which 
-the entry and exit faces (relative to the photon line of flight) are instrumented with silicon photomultipliers (SiPMs), while the rest of the faces are covered with a highly reflective material such as teflon. The shape and the dimensions of the box itself can be adapted to the application. The size and type of SiPMs can also be tuned depending on the application.
+the entry and exit faces (relative to the photon line of flight) are instrumented with SiPMs, while the rest of the faces are covered with a highly reflective material such as teflon. The shape and the dimensions of the box itself can be adapted to the application. The size and type of SiPMs can also be tuned depending on the application.
 
 For example, a scanner designed for large axial coverage (e.g, ``full body PET'') could be based on trapezoidal cells (to maximize the packing) of large transverse dimensions and a thickness of 5-6 cm (to stop $\sim$80\% of the incoming gammas). The cell could use large
-SiPMs (e.g., 6 mm length) coated with a suitable wavelength shifter, such as tetraphenyl butadiene (TPB). The teflon panels covering the non-instrumented faces can also be coated with TPB. Notice that TPB shifts the VUV light (172 nm) emitted by the LXe  to wavelengths around 430 nm (where the PDE of conventional SiPMs is maximal) with an efficiency of better than 80\%. Furthermore, TPB does not absorb blue light above 400 nm, therefore minimizing losses. On the other hand, several manufacturers offer today SiPMs of large area, high gain, low dark current and very low noise which can operate at liquid xenon temperatures with excellent performance.
+SiPMs (e.g., 6 mm length) coated with a suitable wavelength shifter, such as tetraphenyl butadiene (TPB). The teflon panels covering the non-instrumented faces can also be coated with TPB. Notice that TPB shifts the VUV light (172 nm) emitted by the LXe  to wavelengths around 430 nm (where the photodetection efficiency, or PDE,  of conventional SiPMs is maximal) with an efficiency of better than 80\%. Furthermore, TPB does not absorb blue light above 400 nm, therefore minimizing losses. On the other hand, several manufacturers offer today SiPMs of large area, high gain, low dark current and very low noise which can operate at liquid xenon temperatures with excellent performance.
 
-Instead, a scanner designed to optimize sensitivity, including excellent CRT (better than 100 ps, as described below), would use SiPMs optimized for spatial and time resolution. An attractive possibility are the Hamamatsu VUV MPPCs, with 3 mm size and sensitive to 172 nm light with a PDE of around 15\%. Such a scanner could represent a breakthrough if applied to brain imaging.  
+Instead, a scanner designed to optimize sensitivity, including excellent CRT (better than 100 ps, as described below), would use SiPMs optimized for spatial and time resolution. An attractive possibility are the Hamamatsu VUV SiPMs, with 3 mm size and sensitive to 172 nm light with a PDE of around 15\%. Such a scanner could represent a breakthrough if applied to brain imaging.  
 
-An initial study of the expected performance of the LXSC defined above (called the LXSC2) has been conducted using Monte Carlo simulation\footnote{J.M. Benlloch Rodr\'iguez, {\bf PETALO, a new concept for a Positron Emission TOF apparatus based on liquid Xenon}, Master thesis, University of Valencia, September, 2015.}. We describe below some of the most significative results:
+An initial study of the expected performance of the LXSC defined above (called the LXSC2) has been conducted using Monte Carlo simulation \cite{tfm}. We describe below some of the most significative results:
 
 \subsection{Energy and spatial resolution}
 
 \begin{figure}[!htb]
 	\centering		
 		\subfloat[LXSC2, $x$ coordinate]{
-			\includegraphics[width=.6\textwidth]{../img/eposx_264.pdf}
+			\includegraphics[width=.49\textwidth]{../img/eposx_264.pdf}
 			\label{fig.eposx264}		}
 		\subfloat[LXSC2, $z$ coordinate]{
-			\includegraphics[width=.6\textwidth]{../img/eposz_264.pdf}
+			\includegraphics[width=.49\textwidth]{../img/eposz_264.pdf}
 			\label{fig.eposz264}
 		}
-	\caption{\label{fig.energyDep2} Difference between the reconstructed energy and the average energy ($\Delta E$) as a function of one coordinate. (a) Energy dependence with the transverse coordinate ($x$) in LXSC2. (b) Energy dependence with the longitudinal coordinate ($z$) in LXSC2.}
+	\caption{\label{fig.energyDep2} Difference between the reconstructed energy and the average energy ($\Delta E$) as a function of one coordinate. (a) Energy dependence with the transverse coordinate ($x$) in LXSC2. (b) Energy dependence with the longitudinal coordinate ($z$) in LXSC2. For interpretation of the references to color in this figure legend, the reader is referred to the web version of this article.}
 \end{figure}
 
 
