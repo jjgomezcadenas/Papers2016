@@ -1,10 +1,16 @@
 Editor's comments
-1.
+1. We have changed the title in order to match better the orientation
+of the journal.
 2. We have used full wording in the title and in the abstract. We have revised the whole paper, defining every abbreviation only the first time it appears in the text.
-3.
+3. We have added  highlights in the conclusions.
 4. We have moved the footnote to a reference, in the same format as the others.
 5. We have updated all the references as suggested.
 6. We have used the option "scale" to the command \includegraphics, in order to make the size independent of the actual width of the text, since we don't have the exact layout of the journal. The value of the scale parameter can be modified by the typesetter according to the final layout.
 We have added a line in the caption of Fig. 7, which reads as "A possible configuration is a 5x5x5 cm box."
 We have replaced figure 3 with a better quality version.
 7. We have added the suggested line to the caption of Fig. 8.
+
+Reviewers' comments
+We have implemented all the suggestions received.
+
+
