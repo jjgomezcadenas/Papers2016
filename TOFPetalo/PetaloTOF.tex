@@ -86,14 +86,14 @@ PET \sep TOF \sep Liquid Xenon \sep energy resolution \sep
 
 \section{Introduction}
 
-PETALO (Positron Electron TOF Apparatus using Liquid xenOn) is a proposed a new type of PET scanner using liquid xenon\cite{Petalo2015} (LXe). The detector building block is the liquid xenon scintillating cell (LXSC). The cell shape and dimensions can be optimised depending on the intended application. In particular the LXSC2 is a box in which two faces are covered by silicon photomultipliers and the others by a reflecting material such as Teflon. The SiPMs can be VUV sensitive or, alternatively, be coated with a wavelength shifter such as tetraphenyl butadiene (TPB).  They are read out by ASICs optimized for excellent timing resolution. PETALO is a compact, homogenous and highly efficient detector which shares many of the desirable properties of monolithic crystals, with the added advantage of high yield and fast scintillation offered by liquid xenon, low noise due to cryogenic operations which virtually eliminates the SiPMs dark current and the potential of low cost. 
+PETALO (Positron Electron TOF Apparatus using Liquid xenOn) is a proposed a new type of PET scanner using liquid xenon \cite{Petalo2015} (LXe). The detector building block is the liquid xenon scintillating cell (LXSC). The cell shape and dimensions can be optimised depending on the intended application. In particular the LXSC2 is a box in which two faces are covered by silicon photomultipliers and the others by a reflecting material such as Teflon. The SiPMs can be VUV sensitive or, alternatively, be coated with a wavelength shifter such as tetraphenyl butadiene (TPB).  They are read out by ASICs optimized for excellent timing resolution. PETALO is a compact, homogenous and highly efficient detector which shares many of the desirable properties of monolithic crystals, with the added advantage of high yield and fast scintillation offered by liquid xenon, low noise due to cryogenic operations which virtually eliminates the SiPMs dark current and the potential of low cost. 
 
-The energy and spatial resolution of a PETALO scanner based in LXSC2 cells equipped with 6 mm SiPMs coated with TPB was investigated in\cite{Petalo2015}. The expected energy resolution was found to be 12 \% FWHM (dominated by intrinsic fluctuations in xenon). The expected spatial resolution in the three coordinates is 2 mm FWHM. These results are  comparable to those achieved by monolithic LYSO crystals using a much finer segmentation 
-(see for example \cite{VanDamm2011}). 
+The energy and spatial resolution of a PETALO scanner based in LXSC2 cells equipped with 6 mm SiPMs coated with TPB was investigated in \cite{Petalo2015}. The expected energy resolution was found to be 12 \% FWHM (dominated by intrinsic fluctuations in xenon). The expected spatial resolution in the three coordinates is 2 mm FWHM. These results are  comparable to those achieved by monolithic LYSO crystals using a much finer segmentation 
+(see, for example, ref.~\cite{VanDamm2011}). 
 
  \begin{figure}[!bthp]
 	\centering
-	\includegraphics[scale=0.99]{../img/PetaloSetup.png}
+	\includegraphics[scale=0.4]{../img/PetaloSetup.png}
 	\caption{\label{fig.psetup} Monte Carlo simulation of gamma interactions in the LXe setup, as 
 	described in the text.}
 \end{figure}
@@ -103,7 +103,7 @@ that could be achieved by a PETALO-LXSC2 scanner. To systematically study the di
 $5 \times 5 \times 5 {\rm ~cm^3}$, facing each other in opposite sides of a 511 keV gamma source 
 (Figure \ref{fig.psetup}) and equipped with SiPMs which can be either VUV sensitive or coated with  TPB. The  LYSO setup replaces the two LXSC2 cells by a pair of  monolithic LYSO crystals, also readout by SiPMs, of identical transverse dimensions ($5 \times 5 {\rm ~cm^2}$) and identical thickness in terms of interaction lengths ($1.7 {\rm cm}$).  
 
-This work is organized as follows. In section \ref{sec.LXe} we summarize the relevant properties of liquid xenon as scintillating material and briefly describe the PETALO concept and the expected performance of the LXSC2 in energy and spatial resolution. In section\ref{sec.scint} we review the mechanisms which produce scintillation light in LXe and propose a parameterization of the measured scintillation data in terms of two decay constants. In \section{sec.CRT} we discuss the the CRT performance of the LXSC2. Conclusions are presented in section \ref{sec.conclu}. 
+This work is organized as follows. In section \ref{sec.LXe} we summarize the relevant properties of liquid xenon as scintillating material and briefly describe the PETALO concept and the expected performance of the LXSC2 in energy and spatial resolution. In section \ref{sec.scint} we review the mechanisms which produce scintillation light in LXe and propose a parameterization of the measured scintillation data in terms of two decay constants. In section \ref{sec.CRT} we discuss the the CRT performance of the LXSC2. Conclusions are presented in section \ref{sec.conclu}. 
 
 \section{Liquid xenon as detection material and the PETALO concept}
 \label{sec.LXe}
@@ -153,7 +153,7 @@ The spatial resolution in the (x,y) coordinates (transverse to the gammas line o
 $p/\sqrt{12}$, where $p$~is the pitch. With a pitch of 6 mm a 1.7 mm rms or 4 mm FWHM could be expected. Weighting with the SiPM amplitude improves the resolution to about 2 mm FWHM. The depth of interaction (DOI) is obtained by computing the ratio between the
 total signal recorded in the entry and exit face, and is found to be also 2 mm FWHM. 
 
-\section{Scintillation in LXe}
+\section{Scintillation in LXe} \label{sec.scint}
 
 When a 511 keV gamma interacts in liquid xenon it will produce a secondary electron (by either photoelectric or Compton interaction) which in turn will propagate a short distance in the liquid, ionizing the medium. Most of the scintillation light in Xenon is emitted by diatomic excited molecules which are formed through two distinct processes:
 \begin{enumerate}
