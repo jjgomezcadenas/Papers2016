@@ -190,7 +190,7 @@ of the electrons is slow compared with the fast constant $\tau_1$. Then, $I^R_1$
 I^R_1 =(1 + \frac{t}{T_r})^{-2}
 \end{equation}
 %
-where $T_r \sim 15$~ns for Xenon. Instead, since $\tau_2 > T_r$, $I^R_2$~ can be described as in the case of the SE processes: 
+where $T_r \sim 15$~ns for xenon. Instead, since $\tau_2 > T_r$, $I^R_2$~ can be described as in the case of the SE processes: 
 
 \begin{equation}
 I^R_2 =\frac{e^{-t/\tau_2}}{\tau_2}
@@ -206,12 +206,12 @@ I^R_2 =\frac{e^{-t/\tau_2}}{\tau_2}
 Figure \ref{fig.scint} shows the total intensity of scintillation in LXe for a 511 keV gamma (resulting in a total of $N_\gamma =30000$~ VUV photons), adding the contribution of SE and SR processes. The resulting curve, which includes the contribution of SE and SR processes is well described in terms of the sum of two exponential distributions: 
 
 \begin{equation}
-I(t) = N_\gamma 0.07 \cdot \frac{e^{-t/\tau_1}}{\tau_1} + 0.93 \cdot \frac{e^{-t/\tau_2}}{\tau_2}
+I(t) = N_\gamma 0.07 \times \frac{e^{-t/\tau_1}}{\tau_1} + 0.93 \times \frac{e^{-t/\tau_2}}{\tau_2}
 \label{eq.scint}
 \end{equation}
 
 Using equation \ref{eq.scint} it is possible to estimate the potential of LXe for TOF measurements, in particular compared with LYSO. The intrinsic CRT of a scintillator is proportional to the figure of merit 
-$\psi = N_{pe}/tau$, where $\tau$~is the lifetime of the scintillator and $N_{pe}$~is the number of photoelectrons, which in turn can be written as $N_{pe} = N_\gamma \times $PDE. Here $N_\gamma$ ~ is the total number of photons emitted by the scintillator and PDE the overall particle detection efficiency of the sensor reading the scintillation light. 
+$\psi = N_{pe}/tau$, where $\tau$~is the lifetime of the scintillator and $N_{pe}$~is the number of photoelectrons, which in turn can be written as $N_{pe} = N_\gamma \times $PDE. Here $N_\gamma$ is the total number of photons emitted by the scintillator and PDE the overall particle detection efficiency of the sensor reading the scintillation light. 
 
 Then, for LYSO: 
 
@@ -234,8 +234,8 @@ Therefore:
 \label{eq.ratioScint}
 \end{equation}
 
-On the other hand, the scintillation light in LYSO is blue, peaking around 440 nm where the PDE of today's SiPMs reaches values as high as 50\%. Instead, the scintillation light of LXe peaks around 170 nm (VUV region). The NEXT experiment reads the LXe VUV scintillation light using conventional SiPMs coated with TPB\cite{Alvarez:2013gxa}. Alternatively, the MEG experiment will upgrade its LXe calorimeter using VUV-sensitive SiPMs\cite{Ogawa:2015ucj}.
-\section{Monte Carlo study of the CRT in the LXSC2}. The devices tested for the MEG upgrade have a PDE of about 15\%, and reaching a PDE of 20\% seems possible. In the case of SiPMs coated with TPB, the VUV light is absorbed by the wavelength shifter (with an efficiency of 80\%) and then re-emitted isotropically. Thus, the effective PDE is reduced to about 20\%. Thus:
+On the other hand, the scintillation light in LYSO is blue, peaking around 440 nm where the PDE of today's SiPMs reaches values as high as 50\%. Instead, the scintillation light of LXe peaks around 170 nm (VUV region). The NEXT experiment reads the LXe VUV scintillation light using conventional SiPMs coated with TPB \cite{Alvarez:2013gxa}. Alternatively, the MEG experiment will upgrade its LXe calorimeter using VUV-sensitive SiPMs \cite{Ogawa:2015ucj}.
+\section{Monte Carlo study of the CRT in the LXSC2} The devices tested for the MEG upgrade have a PDE of about 15\%, and reaching a PDE of 20\% seems possible. In the case of SiPMs coated with TPB, the VUV light is absorbed by the wavelength shifter (with an efficiency of 80\%) and then re-emitted isotropically. Thus, the effective PDE is reduced to about 20\%. Thus:
 
  \begin{equation}
 \frac{\psi_{LXe}}{\psi_{LYSO}} = \frac{1987}{350} \sim 3
@@ -244,7 +244,7 @@ On the other hand, the scintillation light in LYSO is blue, peaking around 440 n
 
 In practice, the figure of merit is insufficient to estimate accurately the CRT resolution, since one has to add many other experimental effects. In the next section we address the most important ones through a detailed Monte Carlo study. 
 
-\section{CRT in Xenon: a Monte Carlo study}
+\section{CRT in xenon: a Monte Carlo study}
 \label{sec.CRT}
 
 \begin{figure}[!bhtp]
@@ -258,7 +258,7 @@ In practice, the figure of merit is insufficient to estimate accurately the CRT 
 	($n \cdot \Delta d_p/c$). }
 \end{figure}  
 
-In this section we present a Monte Carlo study quantifying the different factors entering the CRT for LXe. Figure \ref{fig.setup} shows a scheme of  the LXe setup, simulated using the Geant-4 toolkit \cite{Agostinelli:2002hh} . Back to back 511 keV gammas are shot isotropically, from a common vertex $V_0$~ within the solid angle covered by two opposite LXSC2 ($5 \times 5 \times 5 {\rm cm^3}$) (in the LYSO the two LXSCs are replaced by LYSO crystals of $5 \times 5 \times 1.7 {\rm cm^3}$) . The gammas fly a distance $dg_1, dg_2$~before interacting in the LXSCs, at vertices $V_1, V_2$. Scintillation photons are produced according to equation \ref{eq.scint} for LXe (in the case of LYSO they are produced according to a single decay constant of 40 ns) and propagate through the LXe. Denoting $t_1,t_2$~to the time of the first photoelectron recorded in each one of the LXSC, The CRT can be written as:
+In this section we present a Monte Carlo study quantifying the different factors entering the CRT for LXe. Figure \ref{fig.psetup} shows a scheme of  the LXe setup, simulated using the Geant-4 toolkit \cite{Agostinelli:2002hh} . Back to back 511 keV gammas are shot isotropically, from a common vertex $V_0$~ within the solid angle covered by two opposite LXSC2 ($5 \times 5 \times 5 {\rm cm^3}$) (in the LYSO the two LXSCs are replaced by LYSO crystals of $5 \times 5 \times 1.7 {\rm cm^3}$) . The gammas fly a distance $dg_1, dg_2$~before interacting in the LXSCs, at vertices $V_1, V_2$. Scintillation photons are produced according to equation \ref{eq.scint} for LXe (in the case of LYSO they are produced according to a single decay constant of 40 ns) and propagate through the LXe. Denoting $t_1,t_2$~to the time of the first photoelectron recorded in each one of the LXSC, The CRT can be written as:
 
 \begin{equation}
 \Delta t = \frac{1}{2}(t_2 - t_1 - \frac{\Delta d_g}{c} - \frac{n \cdot \Delta d_p}{c}) 
@@ -269,9 +269,7 @@ where $\Delta d_g/c$~is the time of flight difference from the emission to the i
 detection vertex (e.g, the position of the sensor) of the scintillation photons. 
 
 Notice that, while the calculation of the term $\Delta d_g/c$~is immediate, finding the value
-of $n \cdot \Delta d_p/c$~requires the knowledge of the refraction index of the medium (which in turn is a function of the wavelength of the scintillation photons) and the interaction vertices $V_1,V_2$, whose determination depends on the spatial resolution (and in particular of the DOI resolution) of the setup. Furthermore, the recorded time of the photoelectrons is affected by the time jitter of the sensor and the front-end electronics, as well as by the overall clock system. Other effects that affect the CRT are the existence of a rise constant for scintillation (absent in the case of LXe, but of te order of 70 ps for LYSO\footnote{CONFERENCE PAPER?in?IEEE NUCLEAR SCIENCE SYMPOSIUM CONFERENCE RECORD. NUCLEAR SCIENCE SYMPOSIUM · DECEMBER 2010?with?237 READS
-DOI: 10.1109/NSSMIC.2010.5874071 · Source: IEEE Xplore
-Conference: Nuclear Science Symposium Conference Record (NSS/MIC), 2010 IEEE}), and the additional decay constant (about 1 ns) introduced if the SiPMs of the LXSC2 are coated with TPB to shift the VUV light to blue. 
+of $n \cdot \Delta d_p/c$~requires the knowledge of the refraction index of the medium (which in turn is a function of the wavelength of the scintillation photons) and the interaction vertices $V_1,V_2$, whose determination depends on the spatial resolution (and in particular of the DOI resolution) of the setup. Furthermore, the recorded time of the photoelectrons is affected by the time jitter of the sensor and the front-end electronics, as well as by the overall clock system. Other effects that affect the CRT are the existence of a rise constant for scintillation (absent in the case of LXe, but of te order of 70 ps for LYSO \cite{Seifert}), and the additional decay constant (about 1 ns) introduced if the SiPMs of the LXSC2 are coated with TPB to shift the VUV light to blue. 
 
 In the remaining of this section we study systematically the various factors contributing to the CRT in LXe. 
 
@@ -282,7 +280,7 @@ the refraction index to 1.67. For LYSO we fix the scintillation at 430 nm and th
 \begin{figure}[!bhtp]
 	\centering
 	\includegraphics[scale=0.5]{../img/FirstPEScintLXeLYSO.png}
-	\caption{\label{fig.firstPE} Arrival time of the first photoelectron in LXe (blue histogram) and LYSO (yellow histogram), after subtracting the time of flight of the incident gamma ($\Delta d_g/c$) and the time of flight of the scintillation photons ($n \cdot \Delta d_p/c$). }
+	\caption{\label{fig.firstPE} Arrival time of the first photoelectron in LXe (blue histogram) and LYSO (yellow histogram), after subtracting the time of flight of the incident gamma ($\Delta d_g/c$) and the time of flight of the scintillation photons ($n \cdot \Delta d_p/c$). }\label{fig.FirstPE}
 \end{figure} 
 
 Figure \ref{fig.FirstPE} shows the arrival time of the first photoelectron in LXe (blue histogram) and LYSO (yellow histogram), after subtracting the time of flight of the incident gamma ($\Delta d_g/c$) and the time of flight of the scintillation photons ($n \cdot \Delta d_p/c$). As expected, the VUV photons emitted by LXe arrive to the sensors earlier (and with a narrower distribution) than the blue photons emitted by LYSO. 
@@ -293,15 +291,14 @@ The plot is computed introducing a resolution of 2 mm FWHM both in the transvers
 in the DOI (which corresponds to the resolution expected in the LXSC2). The jitter introduced by the DOI correction is:
 
 \begin{equation}
-\Delta t =\Delta z \times (n-1) \times 3.3 ps/mm
+\Delta t =\Delta z \times (n-1) \times 3.3\ \textrm{ps/mm}
 \label{eq.DOI}
 \end{equation}
 
 For LXe, with n=1.67, $\Delta t = 4.4$~ps FWHM for a DOI resolution $\Delta z = 2$~mm FWHM. 
-For LYSO, with n=1.82, $\Delta t = 5.4$~ps FWHM for a DOI resolution $\Delta z = 2$~mm FWHM. The effect is, therefore, small. Notice, on the other hand that a DOI resolution of 2 mm FWHM requires either a double layer of SiPMs (as in the LXSC2) or small monolithic crystals (for example, in
-\cite{VanDamm2011} the authors find a DOI resolution varying between 1 and 4.5 mm FWHM for LYSO crystals of 
+For LYSO, with n=1.82, $\Delta t = 5.4$~ps FWHM for a DOI resolution $\Delta z = 2$~mm FWHM. The effect is, therefore, small. Notice, on the other hand that a DOI resolution of 2 mm FWHM requires either a double layer of SiPMs (as in the LXSC2) or small monolithic crystals (for example, in Ref.~ \cite{VanDamm2011} the authors find a DOI resolution varying between 1 and 4.5 mm FWHM for LYSO crystals of 
 $20 \times 20 \times 12 {\rm mm^3})$). Instead, a conventional segmented LYSO crystal, 20 mm
-thick would have a DOI r.m.s. resolution of $20 {\rm mm}/sqrt(12) = 5.8$~mm, thus 13 mm FWHM, resulting in a $\Delta t = 35.2$~ps FWHM.
+thick would have a DOI r.m.s. resolution of 20 ${\rm mm}/\sqrt{12} = 5.8$~mm, thus 13 mm FWHM, resulting in a $\Delta t = 35.2$~ps FWHM.
 
 \begin{figure}[!bhtp]
 	\centering
