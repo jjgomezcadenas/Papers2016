@@ -296,8 +296,8 @@ in the DOI (which corresponds to the resolution expected in the LXSC2). The jitt
 \end{equation}
 
 For LXe, with n=1.67, $\Delta t = 4.4$~ps FWHM for a DOI resolution $\Delta z = 2$~mm FWHM. 
-For LYSO, with n=1.82, $\Delta t = 5.4$~ps FWHM for a DOI resolution $\Delta z = 2$~mm FWHM. The effect is, therefore, small. Notice, on the other hand that a DOI resolution of 2 mm FWHM requires either a double layer of SiPMs (as in the LXSC2) or small monolithic crystals (for example, in Ref.~ \cite{VanDamm2011} the authors find a DOI resolution varying between 1 and 4.5 mm FWHM for LYSO crystals of 
-$20 \times 20 \times 12 {\rm mm^3})$). Instead, a conventional segmented LYSO crystal, 20 mm
+For LYSO, with n=1.82, $\Delta t = 5.4$~ps FWHM for a DOI resolution $\Delta z = 2$~mm FWHM. The effect is, therefore, small. Notice, on the other hand that a DOI resolution of 2 mm FWHM requires either a double layer of SiPMs (as in the LXSC2) or small monolithic crystals (for example, in Ref.~\cite{VanDamm2011} the authors find a DOI resolution varying between 1 and 4.5 mm FWHM for LYSO crystals of 
+$20 \times 20 \times 12 ~{\rm mm^3})$). Instead, a conventional segmented LYSO crystal, 20 mm
 thick would have a DOI r.m.s. resolution of 20 ${\rm mm}/\sqrt{12} = 5.8$~mm, thus 13 mm FWHM, resulting in a $\Delta t = 35.2$~ps FWHM.
 
 \begin{figure}[!bhtp]
@@ -318,10 +318,7 @@ thick would have a DOI r.m.s. resolution of 20 ${\rm mm}/\sqrt{12} = 5.8$~mm, th
  intrinsic resolution of the LYSO setup is 12 ps (rms). Notice that, due to the contribution of the spatial resolution, the ratio of the CRT between LXe and LYSO is only about a factor 2, rather than a factor 6 suggested by the figure of merit. 
  
  Figure \ref{fig.crt1} shows the CRT as a function of the
- SiPM PDE. Notice that the dependence of the CRT with the PDE is flatter for LXe (red curve) than for LYSO (green curve), as expected given the fact that LXe is brighter scintillation than LYSO. On the other hand, the typical PDE of a blue sensitive SiPM (suitable for LYSO) is 50\% while the best VUV-sensitive SiPMs available today have a sensitivity of 15\% \footnote{Eur.Phys.J. C73 (2013) no.4, 2365
-(2013-04-03)
-DOI: 10.1140/epjc/s10052-013-2365-2
-e-Print: arXiv:1303.2348}. The value of the CRT for a PDE of 50\% in LYSO is $\sim$ 20 ps, while
+ SiPM PDE. Notice that the dependence of the CRT with the PDE is flatter for LXe (red curve) than for LYSO (green curve), as expected given the fact that LXe is brighter scintillation than LYSO. On the other hand, the typical PDE of a blue sensitive SiPM (suitable for LYSO) is 50\% while the best VUV-sensitive SiPMs available today have a sensitivity of 15\% \cite{meg}. The value of the CRT for a PDE of 50\% in LYSO is $\sim$ 20 ps, while
 the CRT for a PDE of 15\% in LXe is $\sim$ 15 ps.
   
 \subsection*{Effect of the TPB decay constant}
@@ -388,8 +385,21 @@ Figure \ref{fig.crt5} shows the CRT as a function of the number of photoelectron
 by a factor of 0.75 (improving fro 40 to 30 ps rms in the case of VUV sensitive devices and from 60 to 43 ps in the case of blue sensitive SiPMs coated with TPB).    
 
 \subsection*{Including the effect of the variable refraction index}
-  Next we introduce the fact that scintillation in LXe is not monochromatic but emitted with the spectrum shown in Figure XX. On the other hand, the refraction index in Xenon is a function of the wavelength, as shown in Figure YY. This implies that the VUV photons propagate with different velocities depending of their wavelength, as shown in Figure ZZ. To take into account this effect, one must use the average group velocity of the photons instead of the constant term $n/c$
-in equation \ref{eq.CRT}. This introduces an extra smearing, due to the spread of the average velocity (Figure ZZ). The effect worsens slightly the CRT of the VUV sensitive SiPMs, resulting in a value of about 35 ps rms for a PDE of 15 \%, but is negligible in the case of TPB coated SiPMs where the CRT is still 43 ps for a PDE of 50\%. The corresponding value for LYSO and 50\% PDE is similar ($\sim$ 42 ps rms). 
+
+\begin{figure}[!bhtp]
+	\centering
+	\includegraphics[scale=0.5]{../img/ScintillationSpectrumLXe.pdf}
+	\caption{\label{fig.spectrumLXe} Distribution of the energy of scintillation photons in LXe.}
+\end{figure}
+
+\begin{figure}[!bhtp]
+	\centering
+	\includegraphics[scale=0.5]{../img/VelocityDistrLXe.pdf}
+	\caption{\label{fig.vLXe} Distribution of the velocity of scintillation photons propagating in LXe.}
+\end{figure}
+
+  Next we introduce the fact that scintillation in LXe is not monochromatic but emitted with the spectrum shown in Figure \ref{fig.spectrumLXe}. On the other hand, the refraction index in xenon is a function of the wavelength, as shown in Figure YY. This implies that the VUV photons propagate with different velocities depending of their wavelength, as shown in Figure \ref{fig.vLXe}. To take into account this effect, one must use the average group velocity of the photons instead of the constant term $n/c$
+in equation \ref{eq.CRT}. This introduces an extra smearing, due to the spread of the average velocity. The effect worsens slightly the CRT of the VUV sensitive SiPMs, resulting in a value of about 35 ps rms for a PDE of 15 \%, but is negligible in the case of TPB coated SiPMs where the CRT is still 43 ps for a PDE of 50\%. The corresponding value for LYSO and 50\% PDE is similar ($\sim$ 42 ps rms). 
   
   \subsection*{Including the effect of the overall syncronization}
   Finally, we have included the effect of the overall syncronization of a large system, introducing a binning of 25 ps in the recording of the photoelectrons (this corresponds to the binning offered by a number of TOF ASIC\footnote{PETSYS}). The effect turns out to be negligible.  
