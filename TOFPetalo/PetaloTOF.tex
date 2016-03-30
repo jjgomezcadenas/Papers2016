@@ -2,6 +2,7 @@
 \usepackage{subfig}
 \usepackage{float} %Permite manejar/mover/partir mejor figuras y tablas
 \usepackage{lineno,hyperref}
+\usepackage[none]{hyphenat}
 \usepackage{eurosym}
 \modulolinenumbers[5]
 
@@ -65,17 +66,17 @@
 %\address[mysecondaryaddress]{360 Park Avenue South, New York}
 
 \begin{abstract}
-The measurement of the time of flight (TOF) of the two 511 keV gammas recorded in coincidence in a PET scanner provides an effective way of reducing the random background and therefore increase the scanner sensitivity, provided that the coincidence resolution time (CRT) of the gammas is sufficiently good. Existing commercial systems based in LYSO crystals, such as the GEMINIS of Philips reach CRT values of 
+The measurement of the time of flight of the two 511 keV gammas recorded in coincidence in a PET scanner provides an effective way of reducing the random background and therefore increase the scanner sensitivity, provided that the coincidence resolution time (CRT) of the gammas is sufficiently good. Existing commercial systems based in LYSO crystals, such as the GEMINIS of Philips, reach CRT values of 
 $\sim 600$~ps (FWHM). The CRT attained in small setups, however, is much better (around 100-200 ps, depending on the experimental conditions). 
 
-PETALO (Positron Electron TOF Apparatus using Liquid xenOn) is a proposed new type of PET scanner using liquid xenon. The detector building block is the liquid xenon scintillating cell (LXSC). The cell shape and dimensions can be optimised depending on the intended application. In particular the LXSC2 is a box in which two faces are covered by silicon photomultipliers and the others by a reflecting material such as Teflon. The SiPMs can be VUV sensitive or, alternatively, be coated with a wavelength shifter such as tetraphenyl butadiene (TPB). The good energy and position resolution of the LXSC2 coupled with the relatively low cost of Xenon (a factor 7-8 less than LYSO per unit of detection) and the possibility of relatively sparse instrumentation (e.g, the use of 6 mm SiPMs reducing the number of sensors and electronic channels) makes PETALO suitable for the construction of a large scanner (e.g, full body PET) of high sensitivity.   
+PETALO (Positron Electron TOF Apparatus using Liquid xenOn) is a proposed new type of PET scanner using liquid xenon. The detector building block is the liquid xenon scintillating cell. The cell shape and dimensions can be optimised depending on the intended application. In particular, we consider a box in which two faces are covered by silicon photomultipliers and the others by a reflecting material such as Teflon. The SiPMs can be VUV sensitive or, alternatively, be coated with a wavelength shifter such as tetraphenyl butadiene. The good energy and position resolution of the liquid xenon scintillating cell coupled with the relatively low cost of xenon (a factor 7-8 less than LYSO per unit of detection) and the possibility of relatively sparse instrumentation (e.g, the use of 6 mm SiPMs reducing the number of sensors and electronic channels) makes PETALO suitable for the construction of a large scanner (e.g, full body PET) of high sensitivity.   
 
 In this paper we present a Monte Carlo investigation of the CRT performance of a
-PETALO scanner based in the LXSC2 detection cell. We show that a CRT of 80 ps FWHM could be achieved if the LXSC2 would be instrumented with VUV-sensitive SiPMs and a CRT of 100 ps is achieved using blue-sensitive SiPMs coated with TPB. This results show the excellent TOF capabilities of a PETALO scanner.   
+PETALO scanner based in a liquid xenon detection cell with two instrumented faces. We show that a CRT of 80 ps FWHM can be achieved if the cell is instrumented with VUV-sensitive SiPMs and a CRT of 100 ps is achieved using blue-sensitive SiPMs coated with TPB. This results show the excellent time of flight capabilities of a PETALO scanner.   
  \end{abstract}
 
 \begin{keyword}
-PET \sep TOF \sep Liquid Xenon \sep energy resolution \sep
+PET \sep TOF \sep liquid xenon \sep energy resolution \sep
  high sensitivity \sep coincidence resolution time (CRT) \sep SiPMs \sep LYSO.
 \end{keyword}
 
@@ -86,7 +87,7 @@ PET \sep TOF \sep Liquid Xenon \sep energy resolution \sep
 
 \section{Introduction}
 
-PETALO (Positron Electron TOF Apparatus using Liquid xenOn) is a proposed a new type of PET scanner using liquid xenon \cite{Petalo2015} (LXe). The detector building block is the liquid xenon scintillating cell (LXSC). The cell shape and dimensions can be optimised depending on the intended application. In particular the LXSC2 is a box in which two faces are covered by silicon photomultipliers and the others by a reflecting material such as Teflon. The SiPMs can be VUV sensitive or, alternatively, be coated with a wavelength shifter such as tetraphenyl butadiene (TPB).  They are read out by ASICs optimized for excellent timing resolution. PETALO is a compact, homogenous and highly efficient detector which shares many of the desirable properties of monolithic crystals, with the added advantage of high yield and fast scintillation offered by liquid xenon, low noise due to cryogenic operations which virtually eliminates the SiPMs dark current and the potential of low cost. 
+PETALO (Positron Electron TOF Apparatus using Liquid xenOn) is a proposed new type of PET scanner using liquid xenon (LXe) \cite{Petalo2015}. The detector building block is the liquid xenon scintillating cell (LXSC). The cell shape and dimensions can be optimised depending on the intended application. In particular the LXSC2 is a box in which two faces are covered by silicon photomultipliers and the others by a reflecting material such as Teflon. The SiPMs can be VUV sensitive or, alternatively, be coated with a wavelength shifter such as tetraphenyl butadiene (TPB).  They are read out by ASICs optimized for excellent timing resolution. PETALO is a compact, homogenous and highly efficient detector which shares many of the desirable properties of monolithic crystals, with the added advantage of high yield and fast scintillation offered by liquid xenon, low noise due to cryogenic operations which virtually eliminates the SiPMs dark current and the potential of low cost. 
 
 The energy and spatial resolution of a PETALO scanner based in LXSC2 cells equipped with 6 mm SiPMs coated with TPB was investigated in \cite{Petalo2015}. The expected energy resolution was found to be 12 \% FWHM (dominated by intrinsic fluctuations in xenon). The expected spatial resolution in the three coordinates is 2 mm FWHM. These results are  comparable to those achieved by monolithic LYSO crystals using a much finer segmentation 
 (see, for example, ref.~\cite{VanDamm2011}). 
@@ -211,7 +212,7 @@ I(t) = N_\gamma 0.07 \times \frac{e^{-t/\tau_1}}{\tau_1} + 0.93 \times \frac{e^{
 \end{equation}
 
 Using equation \ref{eq.scint} it is possible to estimate the potential of LXe for TOF measurements, in particular compared with LYSO. The intrinsic CRT of a scintillator is proportional to the figure of merit 
-$\psi = N_{pe}/tau$, where $\tau$~is the lifetime of the scintillator and $N_{pe}$~is the number of photoelectrons, which in turn can be written as $N_{pe} = N_\gamma \times $PDE. Here $N_\gamma$ is the total number of photons emitted by the scintillator and PDE the overall particle detection efficiency of the sensor reading the scintillation light. 
+$\psi = N_{pe}/\tau$, where $\tau$~is the lifetime of the scintillator and $N_{pe}$~is the number of photoelectrons, which in turn can be written as $N_{pe} = N_\gamma \times $PDE. Here $N_\gamma$ is the total number of photons emitted by the scintillator and PDE the overall particle detection efficiency of the sensor reading the scintillation light. 
 
 Then, for LYSO: 
 
@@ -398,7 +399,13 @@ by a factor of 0.75 (improving fro 40 to 30 ps rms in the case of VUV sensitive 
 	\caption{\label{fig.vLXe} Distribution of the velocity of scintillation photons propagating in LXe.}
 \end{figure}
 
-  Next we introduce the fact that scintillation in LXe is not monochromatic but emitted with the spectrum shown in Figure \ref{fig.spectrumLXe}. On the other hand, the refraction index in xenon is a function of the wavelength, as shown in Figure YY. This implies that the VUV photons propagate with different velocities depending of their wavelength, as shown in Figure \ref{fig.vLXe}. To take into account this effect, one must use the average group velocity of the photons instead of the constant term $n/c$
+\begin{figure}[!bhtp]
+	\centering
+	\includegraphics[scale=0.5]{../img/LXe_n_lambda.pdf}
+	\caption{\label{fig.nlambda} LXe refraction index as a function of the wavelength of the optical photon.}
+\end{figure}
+
+  Next we introduce the fact that scintillation in LXe is not monochromatic but emitted with the spectrum shown in Figure \ref{fig.spectrumLXe}. On the other hand, the refraction index in xenon is a function of the wavelength, as shown in Figure \ref{fig.nlambda}. This implies that the VUV photons propagate with different velocities depending of their wavelength, as shown in Figure \ref{fig.vLXe}. To take into account this effect, one must use the average group velocity of the photons instead of the constant term $n/c$
 in equation \ref{eq.CRT}. This introduces an extra smearing, due to the spread of the average velocity. The effect worsens slightly the CRT of the VUV sensitive SiPMs, resulting in a value of about 35 ps rms for a PDE of 15 \%, but is negligible in the case of TPB coated SiPMs where the CRT is still 43 ps for a PDE of 50\%. The corresponding value for LYSO and 50\% PDE is similar ($\sim$ 42 ps rms). 
   
   \subsection*{Including the effect of the overall syncronization}
