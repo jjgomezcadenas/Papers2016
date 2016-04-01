@@ -182,7 +182,7 @@ where $I^S$~refers to the intensity of the SE process and $I^R$~to the intensity
 
 Also, after the measurements in reference \cite{Kubota79}, $I^S$~and $I^R$ can be written as:
 \begin{eqnarray}
-I^S & = & 0.2 I_1^S(t) +  0.8 I_2^S(t) \\
+I^S & = & 0.15 I_1^S(t) +  0.85 I_2^S(t) \\
  I^R & = & 0.44 I_1^R(t) +  0.56 I_2^R(t)
 \end{eqnarray}
 
@@ -198,7 +198,7 @@ of the electrons is slow compared with the fast constant $\tau_1$. Then, $I^R_1$
 I^R_1 =(1 + \frac{t}{T_r})^{-2}
 \end{equation}
 %
-where $T_r \sim 15$~ns for xenon. Instead, since $\tau_2 > T_r$, $I^R_2$~ can be described as in the case of the SE processes: 
+where $T_r$~is a recombination time, $T_r \sim 15$~ns for xenon. Instead, since $\tau_2 > T_r$, $I^R_2$~ can be described as in the case of the SE processes: 
 
 \begin{equation}
 I^R_2 =\frac{e^{-t/\tau_2}}{\tau_2}
@@ -361,8 +361,7 @@ Figure \ref{fig.crt2} shows the CRT as a function of the
   
 \subsection*{Effect of the SiPM  and front-end electronics jitter}
   Next we introduce the effect of the jitter of the SiPM and front-end electronics, smearing the arrival time of the photoelectrons by a gaussian distributions with $\sigma = \sigma_{sipm} +  \sigma_{fee}$ and setting 
- $\sigma_{sipm} = 80$~ps, $\sigma_{fee} = 30$~ps. These values are typical of modern SiPMs and front-end electronics. 
- 
+ $\sigma_{sipm} = 80$~ps, $\sigma_{fee} = 30$~ps. These values are typical of modern SiPMs and front-end electronics (see for example: ``Fundamental Limits of Scintillation Detector Timing Precision Stephen", E. Derenzo, Woon-Seng Choong, and William W. Moses,Phys Med Biol. 2014 July 7; 59(13): 3261?3286. doi:10.1088/0031-9155/59/13/3261.) 
  \begin{figure}[!bhtp]
 	\centering
 	\includegraphics[scale=0.4]{../img/CTR_jitter_fixed_n.png}
@@ -373,8 +372,7 @@ Figure \ref{fig.crt2} shows the CRT as a function of the
 Figure \ref{fig.crt3} shows the CRT as a function of the
  SiPM nominal PDE for VUV sensitive SiPMs (red curve) and TPB-coated SiPMs (blue curve) in LXe. The CRT for LYSO is also shown (green line). The CRT includes the
 effect of the jitter associated with the SiPM and the electronics and is computed using the first photoelectron.
-The CRT achieved for VUV sensitive SiPMs with a PDE of 15\% is $\sim$ 100 ps, while  the CRT achieved for blue sensitive SiPMs with a PDE of 50\% and coated with TPB, is $\sim$ 140 ps (the CRT for LYSO and a PDE of 50\% is 
-$\sim$ 110 ps). The difference in CRT between the VUV sensitive case and the TPB coated case has been considerably reduced (from a factor 300 \% to a factor 40\%), since the relative importance of the jitter associated to the sensor and the electronics increases as the intrinsic CRT decreases. This result stresses the fact that the benefit of fast scintillators cannot be fully exploited unless the CRT introduced by the sensors and the electronics is reduced to values of the same order than those intrinsic of the scintillator. 
+The CRT achieved for VUV sensitive SiPMs with a PDE of 15\% is $\sim$ 100 ps, while  the CRT achieved for blue sensitive SiPMs with a PDE of 50\% and coated with TPB, is $\sim$ 140 ps. The difference in CRT between the VUV sensitive case and the TPB coated case has been considerably reduced (from a factor 300 \% to a factor 40\%), since the relative importance of the jitter associated to the sensor and the electronics increases as the intrinsic CRT decreases. This result stresses the fact that the benefit of fast scintillators cannot be fully exploited unless the CRT introduced by the sensors and the electronics is reduced to values of the same order than those intrinsic of the scintillator. 
 
 \begin{figure}[!bhtp]
 	\centering
@@ -383,7 +381,7 @@ $\sim$ 110 ps). The difference in CRT between the VUV sensitive case and the TPB
 \end{figure}
 
 However, the CRT can be improved by using the first few photoelectrons recorded by the SiPM to compute an average. 
-Figure \ref{fig.crt4} shows the CRT as a function of the number of photoelectrons for several PDE in LXe for VUV sensitive SiPMs. Using the first 10 photoelectrons, a CRT of 30 ps is achieved for a PDE of 15\%. 
+Figure \ref{fig.crt4} shows the CRT as a function of the number of photoelectrons for several PDE in LXe for VUV sensitive SiPMs. Using the first 10 photoelectrons, a CRT of 70 ps is achieved for a PDE of 15\%. The CRT could improve up to a very good value of 60 ps for a PDE of 20\% which could be within the reach of current technology. 
 
 \begin{figure}[!bhtp]
 	\centering
@@ -391,17 +389,9 @@ Figure \ref{fig.crt4} shows the CRT as a function of the number of photoelectron
 	\caption{\label{fig.crt5} CRT as a function of the number of photoelectrons for several PDE in LXe for blue sensitive SiPMs coated with TPB.}
 \end{figure}
 
-Figure \ref{fig.crt5} shows the CRT as a function of the number of photoelectrons for several PDE in LXe for blue sensitive SiPMs coated with TPB. Using the first 10 photoelectrons, a CRT of 45 ps is achieved for a  PDE of 50\%. Notice that the use of the first few photoelectrons reduces the CRT of both VUV sensitive and blue sensitive SiPMs 
-by a factor of 0.75 (improving fro 40 to 30 ps rms in the case of VUV sensitive devices and from 60 to 43 ps in the case of blue sensitive SiPMs coated with TPB).    
+Figure \ref{fig.crt5} shows the CRT as a function of the number of photoelectrons for several PDE in LXe for blue sensitive SiPMs coated with TPB. Using the first 10 photoelectrons, a CRT of 120 ps is achieved for a  PDE of 50\%. While this result is up to a factor 2 worse than the potential CRT that could be obtained with VUV sensitive devices, it is still a much better result that what is currently available in commercial devices.      
 
 \subsection*{Including the effect of the variable refraction index}
-
-
-\begin{figure}[!bhtp]
-	\centering
-	\includegraphics[scale=0.5]{../img/VelocityDistrLXe.pdf}
-	\caption{\label{fig.vLXe} Distribution of the velocity of scintillation photons propagating in LXe.}
-\end{figure}
 
 \begin{figure}[!bhtp]
 	\centering
@@ -409,7 +399,14 @@ by a factor of 0.75 (improving fro 40 to 30 ps rms in the case of VUV sensitive 
 	\caption{\label{fig.nlambda} LXe refraction index as a function of the wavelength of the optical photon.}
 \end{figure}
 
-  Next we introduce the fact that scintillation in LXe is not monochromatic but emitted with the spectrum shown in figure \ref{fig.spectrumLXe}. On the other hand, the refraction index in xenon is a function of the wavelength, as shown in Figure \ref{fig.nlambda}. This implies that the VUV photons propagate with different velocities depending of their wavelength, as shown in Figure \ref{fig.vLXe}. To take into account this effect, one must use the average group velocity of the photons instead of the constant term $n/c$
+\begin{figure}[!bhtp]
+	\centering
+	\includegraphics[scale=0.5]{../img/VelocityDistrLXe.pdf}
+	\caption{\label{fig.vLXe} Distribution of the velocity of scintillation photons propagating in LXe.}
+\end{figure}
+
+
+  Next we introduce the fact that the refraction index in xenon is a function of the wavelength, as shown in Figure \ref{fig.nlambda}. This implies that the VUV photons propagate with different velocities depending of their wavelength, as shown in Figure \ref{fig.vLXe}. To take into account this effect, one must use the average group velocity of the photons instead of the constant term $n/c$
 in equation \ref{eq.CRT}. This introduces an extra smearing, due to the spread of the average velocity. The effect worsens slightly the CRT of the VUV sensitive SiPMs, resulting in a value of about 35 ps rms for a PDE of 15 \%, but is negligible in the case of TPB coated SiPMs where the CRT is still 43 ps for a PDE of 50\%. The corresponding value for LYSO and 50\% PDE is similar ($\sim$ 42 ps rms). 
   
   \subsection*{Including the effect of the overall syncronization}
