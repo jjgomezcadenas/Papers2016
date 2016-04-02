@@ -66,18 +66,20 @@
 %\address[mysecondaryaddress]{360 Park Avenue South, New York}
 
 \begin{abstract}
-The measurement of the time of flight of the two 511 keV gammas recorded in coincidence in a PET scanner provides an effective way of reducing the random background and therefore increases the scanner sensitivity, provided that the coincidence resolution time (CRT) of the gammas is sufficiently good. Existing commercial systems based in LYSO crystals, such as the GEMINIS of Philips, reach CRT values of 
-$\sim 600$~ps (FWHM). The CRT attained in small setups, however, is much better (around 100-200 ps, depending on the experimental conditions). 
+The measurement of the time of flight of the two 511 keV gammas recorded in coincidence in a PET scanner provides an effective way of reducing the random background and therefore increases the scanner sensitivity, provided that the coincidence resolving time (CRT) of the gammas is sufficiently good. Existing commercial systems based in LYSO crystals, such as the GEMINIS of Philips, reach CRT values of 
+$\sim 600$~ps (FWHM). 
+%The CRT attained in small setups, however, is much better (around 100-200 ps, depending on the experimental conditions). 
 
-PETALO (Positron Electron TOF Apparatus using Liquid xenOn) is a proposed new type of PET scanner using liquid xenon. The detector building block is the liquid xenon scintillating cell. The cell shape and dimensions can be optimised depending on the intended application. In particular, the LXSC2 instruments the entry and exit faces of the box (relative to the gammas line of flight) with silicon photomultipliers, while all the other faces are covered with a reflecting material such as Teflon. The SiPMs can be VUV sensitive or, alternatively, be coated with a wavelength shifter such as tetraphenyl butadiene. The good energy and position resolution of the LXSC2 coupled with the relatively low cost of xenon (a factor 7-8 less than LYSO per unit of detection) makes PETALO suitable for the construction of a large scanner of high sensitivity.   
+%PETALO (Positron Electron TOF Apparatus using Liquid xenOn) is a proposed new type of PET scanner using liquid xenon. The detector building block is the liquid xenon scintillating cell. The cell shape and dimensions can be optimised depending on the intended application. In particular, the LXSC2 instruments the entry and exit faces of the box (relative to the gammas line of flight) with silicon photomultipliers, while all the other faces are covered with a reflecting material such as Teflon. The SiPMs can be VUV sensitive or, alternatively, be coated with a wavelength shifter such as tetraphenyl butadiene. The good energy and position resolution of the LXSC2 coupled with the relatively low cost of xenon (a factor 7-8 less than LYSO per unit of detection) makes PETALO suitable for the construction of a large scanner of high sensitivity.   
 
 In this paper we present a Monte Carlo investigation of the CRT performance of a
-PETALO scanner based in the LXSC2. We obtain that a CRT of 80 ps FWHM can be achieved if the cell is instrumented with VUV-sensitive SiPMs and a CRT of 100 ps is achieved using blue-sensitive SiPMs coated with tetraphenyl butadiene. These results show the excellent time of flight capabilities of a PETALO scanner.   
+PET scanner exploiting the scintillating properties of liquid xenon. We find that an excellent CRT of 60-70 ps (depending on the PDE of the sensor) can be obtained in the scanner is instrumented with silicon photomultipliers (SiPMs) sensitive to the ultraviolet light emitted by xenon. Alternatively, a CRT of 120 ps can be obtained instrumenting the scanner with (much cheaper) blue-sensitive SiPMs coated with a suitable wavelength shifter.
+These results show the excellent time of flight capabilities of a PET device based in liquid xenon.   
  \end{abstract}
 
 \begin{keyword}
 PET \sep TOF \sep liquid xenon \sep energy resolution \sep
- high sensitivity \sep coincidence resolution time (CRT) \sep SiPMs \sep LYSO.
+ high sensitivity \sep coincidence resolving time (CRT) \sep SiPMs \sep LYSO.
 \end{keyword}
 
 \end{frontmatter}
@@ -86,35 +88,44 @@ PET \sep TOF \sep liquid xenon \sep energy resolution \sep
 \input{../Commands}
 
 \section{Introduction}
+Positron Emission Tomography (PET) is a non invasive imaging technique that produces a three-dimensional image of functional processes --it does not show anatomic features, but it rather  measures the metabolic activity of the cells-- in the body. PET is used in
+both clinical and pre-clinical research to study the molecular bases and treatments of
+disease. The principle of operation relies in injecting into the patient a  
+biologically active molecule doped with a radioactive isotope, called tracer (a standard tracer is fluorodeoxyglucose, FDG, formed substituting an atom of oxygen by the isotope \FDG\ in a glucose molecule). The radionuclide decays and the resulting positrons
+subsequently annihilate with electrons after traveling a short distance within the subject.
+Each annihilation produces two 511 keV photons emitted most of the time in opposite
+directions and these photons are registered by a detection system. For a pair coincidence event, if the energy of two photons stays within a
+pre-set energy window, centered on the 511 keV photopeak, and the timing difference stays within a pre-set time window, a coincidence event will be registered and constitutes a line-of-response (LOR) for image
+reconstruction.
 
-\begin{figure}[!htbp]
-	\centering
-	\includegraphics[scale=0.6]{../img/LXSC2.pdf}
-	\caption{The LXSC2 instruments the entry and exit faces of the box (relative to the photon line of flight) with silicon photomultipliers (SiPMs), which can be eventually coated with TPB. The non-instrumented faces are covered by reflecting Teflon (optionally also coated with TPB).}\label{fig.box} 
-\end{figure}
+The reconstruction of the image in a PET system requires crossing many LORs which in turn define one emission point in the area under study. A LOR can be formed by: 1) a {\bf true coincidence}, which occur when both photons from an annihilation event are detected, neither photon undergoes any form of interaction prior to detection, and no other event is detected within the coincidence time-window; 2)
+a {\bf scattered coincidence}, which occurs when one or both detected photons undergo at least one Compton scattering interaction prior to detection. Since the direction of the photon changes due to the scattering process, the resulting coincidence event will, most likely, produce a wrong LOR. Scattered coincidences add a background to the true coincidence distribution, decreasing contrast and causing the isotope concentrations to be overestimated. They also add statistical noise to the signal; 3)  a {\bf random coincidences}, which occurs when two photons, not arising from the same annihilation event, impinge the detectors within the coincidence time window of the system. Random coincidences also add statistical noise to the data. 
 
-PETALO (Positron Electron TOF Apparatus using Liquid xenOn) is a proposed new type of PET scanner using liquid xenon (LXe) \cite{Petalo2015}. The detector building block is the liquid xenon scintillating cell (LXSC). The cell shape and dimensions can be optimised depending on the intended application. In particular, the LXSC2 instruments the entry and exit faces of the box (relative to the gammas line of flight) with silicon photomultipliers, while all the other faces are covered with a reflecting material such as Teflon (figure \ref{fig.box}). The SiPMs can be VUV sensitive or, alternatively, be coated with a wavelength shifter such as tetraphenyl butadiene. They are read out by ASICs optimized for excellent timing resolution. PETALO is a compact, homogenous and highly efficient detector which shares many of the desirable properties of monolithic crystals, with the added advantage of high yield and fast scintillation offered by liquid xenon, low noise due to cryogenic operations which virtually eliminates the SiPMs dark current, and the potential of low cost. 
+The measurement of the time of flight (TOF) of the two 511 keV gammas recorded in coincidence in a PET scanner provides an effective way of reducing the background due to random coincidences and therefore increases the scanner sensitivity, provided that the coincidence resolving time (CRT) of the gammas is sufficiently good. Existing commercial systems based in LYSO crystals, such as the GEMINIS of Philips(Performance of Philips Gemini TF PET/CT Scanner with Special Consideration for Its Time-of-Flight Imaging CapabilitiesSuleman Surti, Austin Kuhn, Matthew E. Werner, Amy E. Perkins, Jeffrey Kolthammer, and Joel S. Karp, J Nucl Med 2007; 48:471?480), reach CRT values of 
+$\sim 600$~ps (FWHM). 
 
-The energy and spatial resolution of a PETALO scanner based in LXSC2 cells equipped with 6 mm SiPMs coated with TPB was investigated in \cite{Petalo2015}. The expected energy resolution was found to be 12 \% FWHM (dominated by intrinsic fluctuations in xenon). The expected spatial resolution in the three coordinates is 2 mm FWHM. These results are  comparable to those achieved by monolithic LYSO crystals using a much finer segmentation 
-(see, for example, reference \cite{VanDamm2011}). 
+Recent research, using small setups, has found much better results. For example Ferri et al. (Performance of FBK high-density SiPM technology coupled to Ce:LYSO and Ce:GAGG for TOF-PET; Alessandro Ferri, Alberto Gola, Nicola Serra, Alessandro Tarolli, Nicola Zorzi and Claudio Piemonte; Phys. Med. Biol. 59 (2014) 869?880 doi:10.1088/0031-9155/59/4/869) report measurements with using a pair of small LYSO crystals 
+($3 \times 3 \times 5 {\rm mm^3}$ readout by high-fill factor SiPMs. With this setup, a CRT of $157\pm 5$~ ps was found at ambient temperature ($20\,^{\circ}{\rm C}$). The CRT was considerably improved working at $-20\,^{\circ}{\rm C}$, to a value of
+ $125\pm 5$~ ps. The limiting factor of the CRT at ambient temperature was the impact of the dark current rate (DCR).
 
- \begin{figure}[!bthp]
-	\centering
-	\includegraphics[scale=0.4]{../img/PetaloSetup.png}
-	\caption{\label{fig.psetup} Monte Carlo simulation of gamma interactions in the LXe setup, as 
-	described in the text.}
-\end{figure}
+In this paper we present a Monte Carlo investigation of the CRT performance of a recently proposed new type of
+PET scanner, called PETALO (Positron Electron TOF Apparatus using Liquid xenOn). 
+ In section \ref{sec.LXe} we summarize the relevant properties of liquid xenon (LXe) as scintillating material and the main features of the PETALO scanner. In section \ref{sec.scint} we review the mechanisms which produce scintillation light in LXe and propose a parameterization of the measured scintillation data in terms of two decay constants. In section \ref{sec.CRT} we discuss the CRT performance in LXe cells using SiPMs sensitive to the xenon ultraviolet  light and conventional SiPMs coated with a suitable wavelength shifter. Conclusions are presented in section \ref{sec.conclu}. 
 
-In this paper we present a Monte Carlo investigation of the time resolution
-that could be achieved by a PETALO-LXSC2 scanner. To systematically study the different factors that enter the CRT, we have simulated a LXe setup and a LYSO setup, used as a reference. The LXe setup consists of two LXSC2 cells of 
-$2.4 \times 2.4 \times 5 {\rm ~cm^3}$, facing each other in opposite sides of a 511 keV gamma source 
-(figure \ref{fig.psetup}) and equipped with SiPMs which can be either VUV sensitive or coated with  TPB. The  LYSO setup replaces the two LXSC2 cells by a pair of  monolithic LYSO crystals, also readout by SiPMs, of identical dimensions.
+%
+%In this paper we present a Monte Carlo investigation of the time resolution
+%that could be achieved by a PETALO-LXSC2 scanner. To systematically study the different factors that enter the CRT, we have simulated a LXe setup and a LYSO setup, used as a reference. The LXe setup consists of two LXSC2 cells of 
+%$2.4 \times 2.4 \times 5 {\rm ~cm^3}$, facing each other in opposite sides of a 511 keV gamma source 
+%(figure \ref{fig.psetup}) and equipped with SiPMs which can be either VUV sensitive or coated with  TPB. The  LYSO setup replaces the two LXSC2 cells by a pair of  monolithic LYSO crystals, also readout by SiPMs, of identical dimensions.
 %of identical transverse dimensions ($2.4 \times 2.4 {\rm ~cm^2}$) and identical thickness in terms of interaction lengths ($1.7 {\rm cm}$).  
 
-This work is organized as follows. In section \ref{sec.LXe} we summarize the relevant properties of liquid xenon as scintillating material and briefly describe the PETALO concept and the expected performance of the LXSC2 in energy and spatial resolution. In section \ref{sec.scint} we review the mechanisms which produce scintillation light in LXe and propose a parameterization of the measured scintillation data in terms of two decay constants. In section \ref{sec.CRT} we discuss the the CRT performance of the LXSC2. Conclusions are presented in section \ref{sec.conclu}. 
 
 \section{Liquid xenon as detection material and the PETALO concept}
 \label{sec.LXe}
+
+
+\subsection*{Physical properties of liquid xenon relevant for PET}
+
 
 \begin{figure}[!bhtp]
 	\centering
@@ -122,7 +133,7 @@ This work is organized as follows. In section \ref{sec.LXe} we summarize the rel
 	\caption{\label{fig.spectrumLXe} Emission spectrum of scintillation photons in LXe.}
 \end{figure}
 
-Xenon is a noble gas. It responds to the interaction of ionizing radiation providing about 60 per keV of deposited energy. The emitted photons have wavelengths in the ultraviolet range 
+Xenon is a noble gas. It responds to the interaction of ionizing radiation producing about 60 photons per keV of deposited energy. The emitted photons have wavelengths in the ultraviolet range 
 (figure \ref{fig.spectrumLXe}) with an average wavelength of 178 nm. The scintillation signal is fast 
 (see section \ref{sec.scint}) and can thus result in an excellent CRT.  In its liquid phase (at a temperature of $\sim$ 160 K and atmospheric pressure) LXe has a reasonable high density (3 g/cm$^3$) and an acceptable attenuation length (36 mm), which makes it suitable for PET applications. Its main attractive features are:
 
@@ -136,15 +147,15 @@ Xenon is a noble gas. It responds to the interaction of ionizing radiation provi
 %The first idea of using a LXe time projection chamber for PET was proposed in 1993 by Chepel \cite{chepelFirst}. 
 The possibility of building a LXe PET based on the excellent properties of LXe as scintillator was first suggested by Lavoie in 1976 \cite{lavoie}, and the study of this type of PET was carried out by the Waseda group \cite{Doke1,Nishikido2,Nishikido1}. The Waseda prototype was based in LXe cells read out by VUV-sensitive PMTs which covered 5 of the 6 sides of the cell. 
 
-In the PETALO concept, the PMT-cell is replaced by the LXSC. In this paper we consider, in particular, the performance of PETALO scanner based in the LXSC2.
-%(figure \ref{fig.box}) instruments the entry and exit faces of the box (relative to the photon line of flight) with silicon photomultipliers (SiPMs), which can be eventually coated with TPB. The non-instrumented faces are covered by reflecting Teflon (optionally also coated with TPB). The shape and the size of the LXSC can be adapted to the application, for example:
-%\begin{itemize}
-%\item A scanner designed for large axial coverage (e.g, ``full body PET'') could be based on trapezoidal cells (to maximize the packing) of large transverse dimensions and a thickness of 5 cm (to stop $\sim$80\% of the incoming gammas). To minimize costs, the cell could be instrumented with large
-%SiPMs (e.g., 6 mm length) coated with TPB.  Note that TPB shifts the VUV light emitted by the LXe  to wavelengths around 430 nm (where the PDE of conventional SiPMs is maximal) with an efficiency of 
-%80\%. Furthermore, TPB does not absorb blue light above 400 nm, therefore minimizing losses. On the other hand, several manufacturers offer today SiPMs of large area, high gain, low dark current and very low noise which can operate at liquid xenon temperatures with excellent performance.
-%\item A scanner designed to maximize the sensitivity (with applications, for example
-%to brain studies) could be based in LXSC2 instrumented with VUV-sensitive SiPMs to optimize the CRT. 
-%\end{itemize}
+\subsection*{PETALO}
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[scale=0.6]{../img/LXSC2.pdf}
+	\caption{The LXSC2 instruments the entry and exit faces of the box (relative to the photon line of flight) with silicon photomultipliers (SiPMs), which can be eventually coated with TPB. The non-instrumented faces are covered by reflecting Teflon (optionally also coated with TPB).}\label{fig.box} 
+\end{figure}
+
+PETALO (Positron Electron TOF Apparatus using Liquid xenOn) is a proposed new type of PET scanner which exploits the copious scintillation of liquid xenon and the availability of state-of-the-art SiPMs and fast electronics designed to maximize TOF performance \cite{Petalo2015}. The detector building block is the liquid xenon scintillating cell (LXSC). The cell shape and dimensions can be optimised depending on the intended application. In particular, the LXSC2 instruments the entry and exit faces of the box (relative to the gammas line of flight) with silicon photomultipliers, while all the other faces are covered with a reflecting material such as Teflon (figure \ref{fig.box}). They are read out by ASICs optimized for excellent timing resolution. PETALO is a compact, homogenous and highly efficient detector which shares many of the desirable properties of monolithic crystals, with the added advantage of high yield and fast scintillation offered by liquid xenon, low noise due to cryogenic operations which virtually eliminates the SiPMs DCR, and the potential of low cost. 
 
 The energy resolution R of a liquid xenon scintillation detector is a combination of light collection variation due to the detector geometry $R_g$, the statistical fluctuation of number of photoelectrons from the sensors $R_s$, the fluctuation of electron-ion recombination due to escape electrons $R_r$, and the intrinsic resolution from liquid xenon scintillation light $R_i$, due to the non-proportionality of scintillation yield, also associated to fluctuations in the number of secondary electrons. Therefore:
 
@@ -152,14 +163,53 @@ The energy resolution R of a liquid xenon scintillation detector is a combinatio
 R^2 = R_g^2 + R_s^2 + R_r^2 + R_i^2
 \end{equation}
 
-The contribution of the intrinsic terms, ($R_r$~and $R_i$) has been measured to be
-around 11 \% FWHM \cite{aprileRes} for 511 keV gammas. The contribution of photoelectron statistics and geometrical effects for the LXSC2 configuration was found to be 3.0 \% FWHM
+The contribution of the intrinsic terms, ($R_r$~and $R_i$) has been measured to be 11 \% FWHM \cite{aprileRes} for 511 keV gammas. The contribution of photoelectron statistics and geometrical effects for the LXSC2 configuration was found to be 3.0 \% FWHM
 in reference \cite{Petalo2015}. The combination of both effects yields an expected 
 overall resolution of the order of 12\% FWHM for 511 keV gammas, similar to that of LYSO detectors. 
 
 The spatial resolution in the (x,y) coordinates (transverse to the gammas line of flight) is obtained in the LXSC2 by the weighted pulses in the SiPMs. The digital resolution would be
 $p/\sqrt{12}$, where $p$~is the pitch. With a pitch of 6 mm a 1.7 mm rms or 4 mm FWHM could be expected. Weighting with the SiPM amplitude improves the resolution to about 2 mm FWHM. The depth of interaction (DOI) is obtained by computing the ratio between the
 total signal recorded in the entry and exit face, and is found to be also 2 mm FWHM. 
+
+\subsection*{VUV-sensitive SiPMs versus SiPMs coated with TPB}
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[scale=0.6]{../img/PDEVUV.png}
+	\caption{Photo detection efficiency (PDE) of different VUV sensitive SiPMs
+	(from http://neutrino.physics.ucdavis.edu/indico/contribAuthorDisplay.py?contribId=61\&authorId=0\&sessionId=2\&confId=17). The MEG devices are
+	manufactured by Hamamatsu Photonics, while the FBK-2010 and the RGB-HD
+	are manufactured by FBK.  }\label{fig.vuv} 
+\end{figure}
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[scale=0.6]{../img/TPBEfficiency.png}
+	\caption{Visible re-emission spectrum for a TPB film illuminated with 
+	128, 160, 175, and 250 nm light. All spectra are normalized to unit area.
+	(from \cite{Gehman:2011xm}).  }\label{fig.tpb} 
+\end{figure}
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[scale=0.6]{../img/TPBSpectrum.png}
+	\caption{Total integrated fluorescence efficiency for a thin layer of TPB, as a function of input  photon wavelength
+	(from \cite{Gehman:2011xm}).  }\label{fig.tpbeff} 
+\end{figure}
+
+The scintillation light of LXe peaks around 178 nm (VUV region). Therefore the LXSC2 needs to be instrumented either with VUV-sensitive SiPMs (as for example the upgraded LXe calorimeter of the 
+MEG experiment \cite{Ogawa:2015ucj}) or by conventional SiPMs coated with a wavelength shifter such as tetraphenyl butadiene (TPB) (as for example in the NEXT experiment \cite{Alvarez:2013gxa}). 
+The VUV-SiPMs tested for the MEG as well as for the future nEXO 
+experiment \cite{Ogawa:2015ucj,Ostrovskiy:2015oja} reach a PDE of about 
+15\%(figure \ref{fig.vuv}). Further improvements of the technology could eventually result in a PDE of 20\% .  Conventional SiPMs can reach today a PDE of around 50\%.When they are coated with a thin layer of TPB, the VUV light is absorbed by the wavelength shifter with an efficiency of 80\% \cite{Gehman:2011xm} (figure \ref{fig.tpbeff}) 
+shifted to $\sim$ 430 nm (figure \ref{fig.tpb}) and re-emitted isotropically. The decay constant of TPB has been measured to be 2.2 ns in thin films (Journal of Luminescence
+Volume 81, Issue 4, June 1999, Pages 285?291
+Study of poly(methyl methacrylate) thin films doped with laser dyes
+Jinman Huang, Vlasoula Bekiari, Panagiotis Lianosa, Stelios Couris
+).
+
+%
+%An important application of the PETALO concept would be the construction of a ``full body PET'', of axial dimensions in the range of 70-100 cm, exploiting the low cost and the good performance offered by LXe. In the rest of this paper we show that the excellent CRT that can be achieved by the LXSC2 implies that a PETALO scanner could also deploy much better TOF performance that that achieved by current  commercial devices.   
 
 \section{Scintillation in LXe} \label{sec.scint}
 
@@ -218,74 +268,96 @@ I(t) = N_\gamma (0.07 \times \frac{e^{-t/\tau_1}}{\tau_1} + 0.93 \times \frac{e^
 \label{eq.scint}
 \end{equation}
 
-Using equation \ref{eq.scint} it is possible to estimate the potential of LXe for TOF measurements, in particular compared with LYSO. The intrinsic CRT of a scintillator is proportional to the figure of merit 
-$\psi = N_{pe}/\tau$, where $\tau$~is the lifetime of the scintillator and $N_{pe}$~is the number of photoelectrons, which in turn can be written as $N_{pe} = N_\gamma \times $PDE. Here $N_\gamma$ is the total number of photons emitted by the scintillator and PDE the overall particle detection efficiency of the sensor reading the scintillation light. 
-
-Then, for LYSO: 
-
-\begin{equation}
-\psi = \frac{14000}{40} \times PDE = 350 \times PDE
-\label{eq.lysoScint}
-\end{equation}
+%Using equation \ref{eq.scint} it is possible to estimate the potential of LXe for TOF measurements, in particular compared with LYSO. The intrinsic CRT of a scintillator is proportional to the figure of merit 
+%$\psi = N_{pe}/\tau$, where $\tau$~is the lifetime of the scintillator and $N_{pe}$~is the number of photoelectrons, which in turn can be written as $N_{pe} = N_\gamma \times $PDE. Here $N_\gamma$ is the total number of photons emitted by the scintillator and PDE the overall particle detection efficiency of the sensor reading the scintillation light. 
 %
-while, for LXe:
-
-\begin{eqnarray}
-\psi_1 &=& \frac{30000 \times 0.07}{2.2} \times PDE = 954 \times PDE \\
-\psi_2 &=& \frac{30000 \times 0.93}{27} \times PDE = 1033 \times PDE \\
-\end{eqnarray}
-
-Therefore:
-
-\begin{equation}
-\frac{\psi_{LXe}}{\psi_{LYSO}} = \frac{1987}{350} \sim 6 \times PDE
-\label{eq.ratioScint}
-\end{equation}
-
-On the other hand, the scintillation light in LYSO is blue, peaking around 440 nm where the PDE of today's SiPMs reaches values as high as 50\%. Instead, the scintillation light of LXe peaks around 170 nm (VUV region). The NEXT experiment, for instance, reads the LXe VUV scintillation light using conventional SiPMs coated with TPB \cite{Alvarez:2013gxa}. Alternatively, the MEG experiment will upgrade its LXe calorimeter using VUV-sensitive SiPMs \cite{Ogawa:2015ucj}.
-The devices tested for the MEG upgrade have a PDE of about 15\%, and reaching a PDE of 20\% seems possible. In the case of SiPMs coated with TPB, the VUV light is absorbed by the wavelength shifter (with an efficiency of 80\%) and then re-emitted isotropically. Thus, the effective PDE is reduced to about 20\%. Thus:
-
- \begin{equation}
-\frac{\psi_{LXe}}{\psi_{LYSO}} = \frac{1987}{350} \sim 3
-\label{eq.ratioScint}
-\end{equation}
-
-In practice, the figure of merit is insufficient to estimate accurately the CRT resolution, since one has to add many other experimental effects. In the next section we address the most important ones through a detailed Monte Carlo study. 
-
+%Then, for LYSO: 
+%
+%\begin{equation}
+%\psi = \frac{14000}{40} \times PDE = 350 \times PDE
+%\label{eq.lysoScint}
+%\end{equation}
+%%
+%while, for LXe:
+%
+%\begin{eqnarray}
+%\psi_1 &=& \frac{30000 \times 0.07}{2.2} \times PDE = 954 \times PDE \\
+%\psi_2 &=& \frac{30000 \times 0.93}{27} \times PDE = 1033 \times PDE \\
+%\end{eqnarray}
+%
+%Therefore:
+%
+%\begin{equation}
+%\frac{\psi_{LXe}}{\psi_{LYSO}} = \frac{1987}{350} \sim 6 \times PDE
+%\label{eq.ratioScint}
+%\end{equation}
+%
+%On the other hand, the scintillation light in LYSO is blue, peaking around 440 nm where the PDE of today's SiPMs reaches values as high as 50\%. Instead, the scintillation light of LXe peaks around 178 nm (VUV region). The NEXT experiment, for instance, reads the LXe VUV scintillation light using conventional SiPMs coated with TPB \cite{Alvarez:2013gxa}. Alternatively, the MEG experiment will upgrade its LXe calorimeter using VUV-sensitive SiPMs \cite{Ogawa:2015ucj}.
+%The devices tested for the MEG upgrade have a PDE of about 15\%, and reaching a PDE of 20\% seems possible. In the case of SiPMs coated with TPB, the VUV light is absorbed by the wavelength shifter (with an efficiency of 80\%) and then re-emitted isotropically. Thus, the effective PDE is reduced to about 20\%. Thus:
+%
+% \begin{equation}
+%\frac{\psi_{LXe}}{\psi_{LYSO}} = \frac{1987}{350} \sim 3
+%\label{eq.ratioScint}
+%\end{equation}
+%
+%In practice, the figure of merit is insufficient to estimate accurately the CRT resolution, since one has to add many other experimental effects. In the next section we address the most important ones through a detailed Monte Carlo study. 
+%
 \section{Monte Carlo study of the CRT in the LXSC2} 
 \label{sec.CRT}
 
-\begin{figure}[!bhtp]
-	\centering
-	\includegraphics[scale=0.5]{../img/TOFSetup.png}
-	\caption{The setup simulated by this study. Back to back 511 keV gammas are emitted
-	isotropically from $V_0$, and interact in two identical LXSC2, at vertices $V_1$~and
-	$V_2$. The CRT ($\Delta t$), is found by subtracting the time of the first photoelectron recorded
-	in each LXSC, $t_1$~and $t_2$~(or taking an average, see text for details) and correcting
-	by the time of flight of the gammas ($\Delta d_g/c$) and the time of flight of the scintillation photons
-	($n \cdot \Delta d_p/c$). }\label{fig.setup} 
-\end{figure}  
+To systematically study the different factors that enter the CRT, we have simulated a LXe setup and a LYSO setup, using the Geant-4 toolkit \cite{Agostinelli:2002hh}. The LXe setup consists of two LXSC2 of 
+$2.4 \times 2.4 \times 5 {\rm ~cm^3}$, facing each other in opposite sides of a 511 keV gamma source 
+(figure \ref{fig.psetup}) and equipped with SiPMs which can be either sensitive to the xenon ultraviolet (VUV) light, or coated with a wavelength shifter such as tetraphenyl butadiene (TPB). The  LYSO setup replaces the two LXe cells by a pair of  monolithic LYSO crystals of identical dimensions, also readout by SiPMs.
 
-In this section we present a Monte Carlo study quantifying the different factors entering the CRT for LXe. Figure \ref{fig.setup} shows a scheme of  the LXe setup, simulated using the Geant-4 toolkit \cite{Agostinelli:2002hh} . Back to back 511 keV gammas are shot isotropically, from a common vertex $V_0$~ within the solid angle covered by two opposite LXSC2 ($2.4 \times 2.4 \times 5 {\rm cm^3}$) (in the LYSO the two LXSCs are replaced by LYSO crystals of the same size). The gammas fly a distance $dg_1, dg_2$~before interacting in the LXSCs, at vertices $V_1, V_2$. Scintillation photons are produced according to equation \ref{eq.scint} for LXe (in the case of LYSO they are produced according to a single decay constant of 40 ns) and propagate through the LXe. Denoting $t_1,t_2$ the time of the first photoelectron recorded in each one of the LXSC, the time difference between them can be written as:
+ \begin{figure}[!bthp]
+	\centering
+	\includegraphics[scale=0.4]{../img/PetaloSetup.png}
+	\caption{\label{fig.psetup} Monte Carlo simulation of gamma interactions in the LXe setup, as 
+	described in the text.}
+\end{figure}
+
+
+%
+%\begin{figure}[!bhtp]
+%	\centering
+%	\includegraphics[scale=0.5]{../img/TOFSetup.png}
+%	\caption{The setup simulated by this study. Back to back 511 keV gammas are emitted
+%	isotropically from $V_0$, and interact in two identical LXSC2, at vertices $V_1$~and
+%	$V_2$. The CRT ($\Delta t$), is found by subtracting the time of the first photoelectron recorded
+%	in each LXSC, $t_1$~and $t_2$~(or taking an average, see text for details) and correcting
+%	by the time of flight of the gammas ($\Delta d_g/c$) and the time of flight of the scintillation photons
+%	($n \cdot \Delta d_p/c$). }\label{fig.setup} 
+%\end{figure}  
+
+  Back to back 511 keV gammas are shot isotropically, from a common vertex within the solid angle covered by two opposite LXSC2 ($2.4 \times 2.4 \times 5 {\rm cm^3}$). The gammas fly a distance $dg_1, dg_2$~before interacting in the LXSCs. Scintillation photons are produced according to equation \ref{eq.scint} for LXe (in the case of LYSO they are produced according to a single decay constant of 40 ns) and propagated through the material. The photons reach eventually the SiPMs. If the SiPM is not coated with TPB, the photon will enter the SiPM window if the angle of incidence is below the critical angle defined by the ratio of the refraction indexes of the LXSC (LYSO) and the SiPM window $\sin \theta_c = n_2/n_1$,  where we take $n_1 = 1.54$~as the refraction index of the SiPM window and
+  $n_2 = 1.7 (1.82)$~as the refraction index of the LXe (LYSO). If the SiPM is coated with TPB, the 
+  VUV photon is absorbed with an efficiency of 80\% and re-emitted isotropically with a wavelength given by figure \ref{fig.tpb}, then enters the SiPM window with a much larger critical angle, since  $n_2 = 1.55 \sim n_1$~for LXe in the visible region. Depending on the PDE of the SiPM the incident photon may result in a photoelectron. Denoting $t_1,t_2$ as the time of the first photoelectron recorded in each one of the LXSC, the time difference between them can be written as:
 
 \begin{equation}
 \Delta t = \frac{1}{2}(t_2 - t_1 - \frac{\Delta d_g}{c} - \frac{n \cdot \Delta d_p}{c}) 
 \label{eq.CRT}
 \end{equation}
 %
-5
+
 where $\Delta d_g/c$~is the time of flight difference from the emission to the interaction vertex of the two 511 keV gammas, and $n \cdot \Delta d_p/c$~is the time of flight difference from the interaction vertex to the
 detection vertex (e.g, the position of the sensor) of the scintillation photons. The CRT,
-$\delta \Delta t$, is defined as the error\footnote{expressed in number of FWHM unless explicitly stated otherwise.} of the $\Delta t$ distribution. 
+$\delta \Delta t$, is defined as the variance\footnote{expressed in number of FWHM unless explicitly stated otherwise.} of the $\Delta t$ distribution. 
+
+\begin{figure}[!bhtp]
+	\centering
+	\includegraphics[scale=0.6]{../img/LXe_n_lambda.pdf}
+	\caption{\label{fig.nlambda} LXe refraction index as a function of the wavelength of the optical photon.}
+\end{figure}
+
 
 Notice that, while the calculation of the term $\Delta d_g/c$~is immediate, finding the value
-of $n \cdot \Delta d_p/c$~requires the knowledge of the refraction index of the medium (which in turn is a function of the wavelength of the scintillation photons) and the interaction vertices $V_1,V_2$, whose determination depends on the spatial resolution (and in particular of the DOI resolution) of the setup. Furthermore, the recorded time of the photoelectrons is affected by the time jitter of the sensor and the front-end electronics, as well as by the overall clock system. Other effects that affect the CRT are the existence of a rise constant for scintillation (absent in the case of LXe, but of the order of 70 ps for LYSO \cite{Seifert}), and the additional decay constant (about 1 ns) introduced if the SiPMs of the LXSC2 are coated with TPB to shift the VUV light to blue. 
+of $n \cdot \Delta d_p/c$~requires the knowledge of the refraction index of the medium (which in turn is a function of the wavelength of the scintillation photons, see figure \ref{fig.nlambda}) and the interaction vertices of the gammas in the LXSCs, whose determination depends on the spatial resolution (and in particular of the DOI resolution) of the setup. Furthermore, the recorded time of the photoelectrons is affected by the time jitter of the sensor and the front-end electronics, as well as by the overall clock system. Other effects that affect the CRT are the existence of a rise constant for scintillation (absent in the case of LXe, but of the order of 70 ps for LYSO \cite{Seifert}), and the additional decay constant (about 2.2 ns) introduced if the SiPMs of the LXSC2 are coated with TPB. 
 
 In the remaining of this section we study systematically the various factors contributing to the CRT in LXe. 
 
 \subsection*{Intrinsic CRT: effect of the DOI resolution}
 We start our study by assuming that the refraction indices in both media are constant, with values 1.67 for LXe and 
-1.82 for LYSO. 
+1.82 for LYSO. We also fix the refraction index of the SiPM window to the same value of the propagation medium (LXe or LYSO, depending on the setup), so that $n_1 = n_2$ and therefore all photons impinging the SiPM with an angle less than $90\,^{\circ}{\rm C}$~enter the sensor. This (unphysical) assumptions are made in order to separate the contributions to the CRT due to the scintillation lifetime and the DOI resolution from those related with the refraction index. 
 
 \begin{figure}[!bhtp]
 	\centering
@@ -293,7 +365,7 @@ We start our study by assuming that the refraction indices in both media are con
 	\caption{\label{fig.firstPE} Arrival time of the first photoelectron in LXe (blue line) and LYSO (green dotted), after subtracting the time of flight of the incident gamma ($\Delta d_g/c$) and the time of flight of the scintillation photons ($n \cdot \Delta d_p/c$). }\label{fig.FirstPE}
 \end{figure} 
 
-Figure \ref{fig.FirstPE} shows the arrival time of the first photoelectron in LXe and LYSO, after subtracting the time of flight of the incident gamma ($\Delta d_g/c$) and the time of flight of the scintillation photons ($n \cdot \Delta d_p/c$). As expected, the VUV photons emitted by LXe arrive to the sensors earlier (and with a narrower distribution) than the blue photons emitted by LYSO. 
+Figure \ref{fig.FirstPE} shows the arrival time of the first photoelectron in LXe and LYSO, after subtracting the time of flight of the incident gamma ($\Delta d_g/c$) and the time of flight of the scintillation photons ($n \cdot \Delta d_p/c$). As expected, given the faster decay time, the VUV photons emitted by LXe arrive to the sensors earlier (and with a narrower distribution) than the blue photons emitted by LYSO. 
 
 Notice that $\Delta d_p$~is the difference 
 between the position of the interaction vertex and the position of the SiPM which records the photoelectron. 
@@ -320,16 +392,43 @@ thick, would have a DOI resolution of $2.3 \times 20{\rm mm}/\sqrt{12} = 5.8$~mm
 \begin{figure}[!bhtp]
 	\centering
 	\includegraphics[scale=0.4]{../img/CRTvsPDELXeLYSONoJitterFstPE.png}
-	\caption{\label{fig.crt1} CRT as a function of the PDE in LXe (blue line) and LYSO (green dotted line). }
+	\caption{\label{fig.crt1} CRT as a function of the PDE in LXe (blue line) and LYSO (green dotted line) computed using the first photoelectron. The calculation takes into account the scintillation yield and decay time as well as the DOI resolution but does not include
+	the dependence of the refraction index in LXe with wavelength.}
 \end{figure}
 
  Figure \ref{fig.dtof} shows $\delta \Delta t$ for LXe and LYSO for the ideal case of PDE = 1. The wider LYSO distribution is due to the slower decay constant.  Figure \ref{fig.crt1} shows the CRT as a function of the
  SiPM PDE. The CRT of the LXe setup for $PDE=1$~ is $\sim$10 ps, while the
- intrinsic resolution of the LYSO setup for $PDE=1$~is $\sim$30 ps. The dependence of the CRT with the PDE is flatter for LXe than for LYSO, as expected given the fact that LXe is a brighter scintillator than LYSO. 
- 
-On the other hand, the typical PDE of a blue sensitive SiPM (suitable for LYSO) is 50\% while the best VUV-sensitive SiPMs available today have a sensitivity of 15\% \cite{meg}. The value of the CRT for a PDE of 50\% in LYSO is $\sim$ 40 ps, while
-the CRT for a PDE of 15\% in LXe is $\sim$ 30 ps.
+ intrinsic resolution of the LYSO setup for $PDE=1$~is $\sim$30 ps.  This values can be taken as the absolute best limit of the CRT in LXe and LYSO. For a PDE of 50\%, (best value of conventional SiPMs) the CRT in LYSO is $\sim$ 40 ps, while for a PDE of 15\% (best value of VUV-sensitive SiPMs) the CRT in LXe is $\sim$ 30 ps.   
+
+\subsection*{Effect of the refraction index}
+\begin{figure}[!bhtp]
+	\centering
+	\includegraphics[scale=0.6]{../img/VelocityDistrLXe.pdf}
+	\caption{\label{fig.vLXe} Distribution of the velocity of scintillation photons propagating in LXe.}
+\end{figure}
+
+The refraction index in LXe varies significantly with the scintillation photon wavelength, as shown in figure  \ref{fig.nlambda} (instead, the refraction index of LYSO is practically constant in the relevant range of scintillation
+emission). This implies that the xenon VUV photons propagate with different velocities depending of their wavelength, as shown in Figure \ref{fig.vLXe}. To take into account this effect, one must use the average group velocity of the photons instead of the constant term $n/c$
+in equation \ref{eq.CRT}. This introduces an extra smearing which contributes to the CRT, due to the spread of the average velocity. 
+
+We also introduce the refraction index of the SiPM entrance window, which we take as $n_1 = 1.54$ (a typical value, quoted, for example for the SENSL C-series 6 mm sensors). The mismatch with the xenon refraction index
+($n_2 \sim 1.7$ in the VUV region) or the LYSO refraction index ($n_2 = 1.82$) results in a reduction of the efficiency due to Fresnel reflections. The critical angle in xenon is $65\,^{\circ}{\rm C}$ ~($58\,^{\circ}{\rm C}$~in LYSO) and the fraction of photons transmitted through the SiPM window is 63.5\% for LXe (56\% for LYSO).  
+
+\begin{figure}[!bhtp]
+	\centering
+	\includegraphics[scale=0.4]{../img/CRTvsPDE_phys_LXeLYSONoJitterFstPE.png}
+	\caption{\label{fig.crt2} CRT as a function of the PDE in LXe (blue line) and LYSO (green dotted line) computed using the first photoelectron. The calculation takes into account the scintillation yield and decay time as well as the DOI resolution and the dependence of the refraction index in LXe with wavelength. The effect of Fresnel reflections
+	due to the mismatch between the LXe (LYSO) refraction index and that of the SiPM is also taken into
+	account.  }
+\end{figure}
+
+Figure \ref{fig.crt2} shows the CRT as a function of the
+ SiPM PDE when the effect of the refraction index is taken into account. 
+ The CRT of the LXe setup for $PDE=1$~ is now $\sim$30 ps for both LXe and LYSO. 
+ For a PDE of 50\% the CRT in LYSO is $\sim$ 50 ps, while for a PDE of 15\%  the CRT in LXe is $\sim$ 60 ps. 
   
+ 
+ 
 \subsection*{Effect of the TPB decay constant}
 %VUV sensitive SiPMs are currently still in the phase of development and are consequently very expensive (up to a factor 10) compared with blue sensitive SiPMs. 
 % %We consider next the effect of coating the SiPMs of the LXSC2 with TPB. Notice that commercial VUV sensitive SiPMs are currently manufactured only by Hamamatsu\footnote{https://indico.hep.anl.gov/indico/getFile.py/access?contribId=157&sessionId=24&resId=0&materialId=slides&confId=625}, and suffer both from low PDE ($\sim 8\%$) and high cost (around 100 \euro\ per piece for 3 mm sensors, to be compared with 10-15 \euro\ for 3 mm conventional SiPMs). 
@@ -356,12 +455,13 @@ the CRT for a PDE of 15\% in LXe is $\sim$ 30 ps.
 
 Figure \ref{fig.crt2} shows the CRT as a function of the
  SiPM nominal PDE for VUV sensitive SiPMs and TPB-coated SiPMs in LXe. Here we must compare the CRT achieved for VUV sensitive SiPMs with a PDE of 15\% ($\sim$ 30 ps) with the CRT achieved for blue sensitive SiPMs coated with TPB, taking as a reference a PDE of 50\% (this corresponds to the
- PDE for blue light,  however, the CRT is computed taking into account the effect of the TPB absorption and subsequent re-emission).  The CRT in this case is around 110 ps. The degradation introduced by the TPB is, therefore, quite large. However, as we will shortly see, the difference between both cases  is
- considerably reduced when the impact of the jitter of the SiPM and front end electronics is included. 
-  
+ PDE for blue light,  however, the CRT is computed taking into account the effect of the TPB absorption and subsequent re-emission).  The CRT in this case is around 110 ps. The CRT worsens considerably due to the extra delay introduced by the TPB decay and the reduced photon detection efficiency due to the TPB absorption efficiency (80\%) and the effect introduced by the re-emission (only 50\% of the re-emitted photon point into the SiPM). Notice, on the other hand, that the refraction index of LXe in the blue region is almost exactly matched with that of the SiPM window, and therefore Fresnel reflections are negligible. The overall efficiency introduced by the coating is, therefore $\sim$40\%. 
+   
 \subsection*{Effect of the SiPM  and front-end electronics jitter}
   Next we introduce the effect of the jitter of the SiPM and front-end electronics, smearing the arrival time of the photoelectrons by a gaussian distributions with $\sigma = \sigma_{sipm} +  \sigma_{fee}$ and setting 
- $\sigma_{sipm} = 80$~ps, $\sigma_{fee} = 30$~ps. These values are typical of modern SiPMs and front-end electronics (see for example: ``Fundamental Limits of Scintillation Detector Timing Precision Stephen", E. Derenzo, Woon-Seng Choong, and William W. Moses,Phys Med Biol. 2014 July 7; 59(13): 3261?3286. doi:10.1088/0031-9155/59/13/3261.) 
+ $\sigma_{sipm} = 80$~ps, $\sigma_{fee} = 30$~ps. These values are typical of modern SiPMs and front-end electronics (see for example: ``Fundamental Limits of Scintillation Detector Timing Precision Stephen", E. Derenzo, Woon-Seng Choong, and William W. Moses,
+Phys Med Biol. 2014 July 7; 59(13): 3261?3286. doi:10.1088/0031-9155/59/13/3261.)
+ 
  \begin{figure}[!bhtp]
 	\centering
 	\includegraphics[scale=0.4]{../img/CTR_jitter_fixed_n.png}
@@ -393,17 +493,7 @@ Figure \ref{fig.crt5} shows the CRT as a function of the number of photoelectron
 
 \subsection*{Including the effect of the variable refraction index}
 
-\begin{figure}[!bhtp]
-	\centering
-	\includegraphics[scale=0.5]{../img/LXe_n_lambda.pdf}
-	\caption{\label{fig.nlambda} LXe refraction index as a function of the wavelength of the optical photon.}
-\end{figure}
 
-\begin{figure}[!bhtp]
-	\centering
-	\includegraphics[scale=0.5]{../img/VelocityDistrLXe.pdf}
-	\caption{\label{fig.vLXe} Distribution of the velocity of scintillation photons propagating in LXe.}
-\end{figure}
 
 
   Next we introduce the fact that the refraction index in xenon is a function of the wavelength, as shown in Figure \ref{fig.nlambda}. This implies that the VUV photons propagate with different velocities depending of their wavelength, as shown in Figure \ref{fig.vLXe}. To take into account this effect, one must use the average group velocity of the photons instead of the constant term $n/c$
