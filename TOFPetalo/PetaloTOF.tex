@@ -73,7 +73,7 @@ $\sim 600$~ps (FWHM).
 %PETALO (Positron Electron TOF Apparatus using Liquid xenOn) is a proposed new type of PET scanner using liquid xenon. The detector building block is the liquid xenon scintillating cell. The cell shape and dimensions can be optimised depending on the intended application. In particular, the LXSC2 instruments the entry and exit faces of the box (relative to the gammas line of flight) with silicon photomultipliers, while all the other faces are covered with a reflecting material such as Teflon. The SiPMs can be VUV sensitive or, alternatively, be coated with a wavelength shifter such as tetraphenyl butadiene. The good energy and position resolution of the LXSC2 coupled with the relatively low cost of xenon (a factor 7-8 less than LYSO per unit of detection) makes PETALO suitable for the construction of a large scanner of high sensitivity.   
 
 In this paper we present a Monte Carlo investigation of the CRT performance of a
-PET scanner exploiting the scintillating properties of liquid xenon. We find that an excellent CRT of 60-70 ps (depending on the PDE of the sensor) can be obtained in the scanner is instrumented with silicon photomultipliers (SiPMs) sensitive to the ultraviolet light emitted by xenon. Alternatively, a CRT of 120 ps can be obtained instrumenting the scanner with (much cheaper) blue-sensitive SiPMs coated with a suitable wavelength shifter.
+PET scanner exploiting the scintillating properties of liquid xenon. We find that an excellent CRT of 60--70 ps (depending on the PDE of the sensor) can be obtained if the scanner is instrumented with silicon photomultipliers (SiPMs) sensitive to the ultraviolet light emitted by xenon. Alternatively, a CRT of 120 ps can be obtained instrumenting the scanner with (much cheaper) blue-sensitive SiPMs coated with a suitable wavelength shifter.
 These results show the excellent time of flight capabilities of a PET device based in liquid xenon.   
  \end{abstract}
 
@@ -101,7 +101,8 @@ reconstruction.
 The reconstruction of the image in a PET system requires crossing many LORs which in turn define one emission point in the area under study. A LOR can be formed by: 1) a {\bf true coincidence}, which occur when both photons from an annihilation event are detected, neither photon undergoes any form of interaction prior to detection, and no other event is detected within the coincidence time-window; 2)
 a {\bf scattered coincidence}, which occurs when one or both detected photons undergo at least one Compton scattering interaction prior to detection. Since the direction of the photon changes due to the scattering process, the resulting coincidence event will, most likely, produce a wrong LOR. Scattered coincidences add a background to the true coincidence distribution, decreasing contrast and causing the isotope concentrations to be overestimated. They also add statistical noise to the signal; 3)  a {\bf random coincidences}, which occurs when two photons, not arising from the same annihilation event, impinge the detectors within the coincidence time window of the system. Random coincidences also add statistical noise to the data. 
 
-The measurement of the time of flight (TOF) of the two 511 keV gammas recorded in coincidence in a PET scanner provides an effective way of reducing the background due to random coincidences and therefore increases the scanner sensitivity, provided that the coincidence resolving time (CRT) of the gammas is sufficiently good. Existing commercial systems based in LYSO crystals, such as the GEMINIS of Philips(Performance of Philips Gemini TF PET/CT Scanner with Special Consideration for Its Time-of-Flight Imaging CapabilitiesSuleman Surti, Austin Kuhn, Matthew E. Werner, Amy E. Perkins, Jeffrey Kolthammer, and Joel S. Karp, J Nucl Med 2007; 48:471?480), reach CRT values of 
+The measurement of the time of flight (TOF) of the two 511 keV gammas recorded in coincidence in a PET scanner provides an effective way of reducing the background due to random coincidences and therefore increases the scanner sensitivity, provided that the coincidence resolving time (CRT) of the gammas is sufficiently good. Existing commercial systems based in LYSO crystals, such as the GEMINIS of Philips(Performance of Philips Gemini TF PET/CT Scanner with Special Consideration for Its Time-of-Flight Imaging Capabilities
+Suleman Surti, Austin Kuhn, Matthew E. Werner, Amy E. Perkins, Jeffrey Kolthammer, and Joel S. Karp, J Nucl Med 2007; 48:471?480), reach CRT values of 
 $\sim 600$~ps (FWHM). 
 
 Recent research, using small setups, has found much better results. For example Ferri et al. \cite{LysoFBK} report measurements using a pair of small LYSO crystals 
@@ -199,7 +200,7 @@ total signal recorded in the entry and exit face, and is found to be also 2 mm F
 
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[scale=0.6]{../img/PetaloTOF/TpBDecayConstant.png}
+	\includegraphics[scale=0.6]{../img/TPBdecays.pdf}
 	\caption{Evolution of the decay constant of TPB as a function of the thickness of the TPB layer compared
 	with the thickness of the substrate (a thin quartz film). The TPB decay constant decreases as the thickness of the TPB layer (thus its concentration) increases, reaching an asymptotic value of 2.2 ns.   
 	(from \cite{TPBtau}).  }\label{fig.tpbtau} 
@@ -224,19 +225,19 @@ When a 511 keV gamma interacts in liquid xenon it will produce a secondary elect
 
 Both processes are very fast (of the order of the ps) and therefore scintillation in LXe does not have a physical rise constant. The two decay constants are related with the decay of the two lowest excited molecular states 
 (${}^1{\Sigma_u^+},{}^3{\Sigma_u^+}$). The decay of the singlet state 
-(${}^1{\Sigma_u^+}$) occurs with a lifetime $\tau_1 =2.2$~ ns, while the lifetime of the triplet state (${}^3{\Sigma_u^+}$) is $\tau_2 =27$~ns.
+(${}^1{\Sigma_u^+}$) occurs with a lifetime $\tau_1 =2.2$ ns, while the lifetime of the triplet state (${}^3{\Sigma_u^+}$) is $\tau_2 =27$ ns.
 
 The relative contribution of SE and SR processes to the LXe scintillation light has been measured to be \cite{Kubota79}:
 \begin{equation}
 I = 0.3\times I^S + 0.7\times I^R
-\end{equation}
+\end{equation}\label{eq.tot}
 %
-where $I^S$~refers to the intensity of the SE process and $I^R$~to the intensity of the SR process.
+where $I^S$~refers to the intensity of the SE process and $I^R$ to the intensity of the SR process.
 
-Also, after the measurements in reference \cite{Kubota79}, $I^S$~and $I^R$ can be written as:
+Also, after the measurements in reference \cite{Kubota79}, $I^S$ and $I^R$ can be written as:
 \begin{eqnarray}
-I^S & = & 0.15 I_1^S(t) +  0.85 I_2^S(t) \\
- I^R & = & 0.44 I_1^R(t) +  0.56 I_2^R(t)
+I^S & = & 0.15\times I_1^S(t) +  0.85\times I_2^S(t) \\
+ I^R & = & 0.44\times I_1^R(t) +  0.56\times I_2^R(t)
 \end{eqnarray}
 
 The time dependence of the SE process is described by:
@@ -244,14 +245,14 @@ The time dependence of the SE process is described by:
 I^S_i = \frac{e^{-t/\tau_i}}{\tau_i}
 \end{equation}
 %
-where $i=1,2$. The time dependence of the RE process is more complicated, since the recombination time
+where $i=1,2$. The time dependence of the RE process is more complicated, since the recombination time $T_r$
 of the electrons is slow compared with the fast constant $\tau_1$. Then, $I^R_1$~can be parameterized \cite{Kubota79} as: 
 
 \begin{equation}
 I^R_1 =(1 + \frac{t}{T_r})^{-2}
 \end{equation}
 %
-where $T_r$~is a recombination time, $T_r \sim 15$~ns for xenon. Instead, since $\tau_2 > T_r$, $I^R_2$~ can be described as in the case of the SE processes: 
+where $T_r \sim 15$ ns for xenon. Instead, since $\tau_2 > T_r$, $I^R_2$ can be described as in the case of the SE processes: 
 
 \begin{equation}
 I^R_2 =\frac{e^{-t/\tau_2}}{\tau_2}
@@ -259,17 +260,19 @@ I^R_2 =\frac{e^{-t/\tau_2}}{\tau_2}
 
 \begin{figure}[!bhtp]
 	\centering
-	\includegraphics[scale=0.6]{../img/LXeScintillation2.png}
+	\includegraphics[scale=0.6]{../img/Fit10ns_ROOT.pdf}
 %	\includegraphics[width=.5\textwidth]{../img/TOFPET.jpg}
-	\caption{\label{fig.scint} Intensity of scintillation in LXe. }
+	\caption{\label{fig.scint} Intensity of scintillation in LXe, fitted to equation \ref{eq.tot}. }
 \end{figure}
 
-Figure \ref{fig.scint} shows the total intensity of scintillation in LXe for a 511 keV gamma (resulting in a total of $N_\gamma =30000$~ VUV photons), adding the contribution of SE and SR processes. The resulting curve, which includes the contribution of SE and SR processes is well described in terms of the sum of two exponential distributions: 
+Figure \ref{fig.scint} shows the total intensity of scintillation in LXe for a 511 keV gamma (resulting in a total of $N_\gamma =30\,000$ VUV photons), adding the contribution of SE and SR processes (blue dots). This distribution is well described in terms of the sum of two exponential distributions with decay constants $\tau_1$ and $\tau_2$. The fit, shown in figure \ref{fig.scint}, gives the following distribution for the number of photons: 
 
 \begin{equation}
 I(t) = N_\gamma (0.07 \times \frac{e^{-t/\tau_1}}{\tau_1} + 0.93 \times \frac{e^{-t/\tau_2}}{\tau_2})
 \label{eq.scint}
 \end{equation}
+%
+Equation \ref{eq.scint} fits better in the short range, which is the most relevant for CRT estimations.
 
 %Using equation \ref{eq.scint} it is possible to estimate the potential of LXe for TOF measurements, in particular compared with LYSO. The intrinsic CRT of a scintillator is proportional to the figure of merit 
 %$\psi = N_{pe}/\tau$, where $\tau$~is the lifetime of the scintillator and $N_{pe}$~is the number of photoelectrons, which in turn can be written as $N_{pe} = N_\gamma \times $PDE. Here $N_\gamma$ is the total number of photons emitted by the scintillator and PDE the overall particle detection efficiency of the sensor reading the scintillation light. 
