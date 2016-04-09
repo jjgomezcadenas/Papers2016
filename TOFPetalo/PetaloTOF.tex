@@ -517,23 +517,23 @@ to $-20\,^{\circ}{\rm C}$}, e.g, reducing the DCR by a factor 16). The obvious a
 	\caption{\label{fig.crtTPBjit} CRT as a function of the PDE in LXe (red line) and LXe coated  with TPB, assuming several decay times. The CRT is computed using the first photoelectron. The effect of the jitter of the SiPM and electronics is included. }
 \end{figure}
 
-\begin{figure}[!bhtp]
-	\centering
-	\includegraphics[scale=0.4]{../img/PetaloTOF/tpb_noCher_1d0ns_avg_npe_phys.png}
-	\caption{\label{fig.crtTPB1ns} CRT as a function of the number of photoelectrons used to compute $\Delta t$, for LXe and SiPMs coated with TPB. A decay constant of 1 ns is assumed. The CRT is shown for several values of the PDE. }
-\end{figure}
-
-\begin{figure}[!bhtp]
-	\centering
-	\includegraphics[scale=0.4]{../img/PetaloTOF/tpb_noCher_2d2ns_avg_npe_phys.png}
-	\caption{\label{fig.crtTPB2ns} CRT as a function of the number of photoelectrons used to compute $\Delta t$, for LXe and SiPMs coated with TPB. A decay constant of 2.2 ns is assumed. The CRT is shown for several values of the PDE. }
-\end{figure}
-
-\begin{figure}[!bhtp]
-	\centering
-	\includegraphics[scale=0.4]{../img/PetaloTOF/tpb_noCher_3d0ns_avg_npe_phys}
-	\caption{\label{fig.crtTPB3ns} CRT as a function of the number of photoelectrons used to compute $\Delta t$, for LXe and SiPMs coated with TPB. A decay constant of 3 ns is assumed. The CRT is shown for several values of the PDE. }
-\end{figure}
+%\begin{figure}[!bhtp]
+%	\centering
+%	\includegraphics[scale=0.4]{../img/PetaloTOF/tpb_noCher_1d0ns_avg_npe_phys.png}
+%	\caption{\label{fig.crtTPB1ns} CRT as a function of the number of photoelectrons used to compute $\Delta t$, for LXe and SiPMs coated with TPB. A decay constant of 1 ns is assumed. The CRT is shown for several values of the PDE. }
+%\end{figure}
+%
+%\begin{figure}[!bhtp]
+%	\centering
+%	\includegraphics[scale=0.4]{../img/PetaloTOF/tpb_noCher_2d2ns_avg_npe_phys.png}
+%	\caption{\label{fig.crtTPB2ns} CRT as a function of the number of photoelectrons used to compute $\Delta t$, for LXe and SiPMs coated with TPB. A decay constant of 2.2 ns is assumed. The CRT is shown for several values of the PDE. }
+%\end{figure}
+%
+%\begin{figure}[!bhtp]
+%	\centering
+%	\includegraphics[scale=0.4]{../img/PetaloTOF/tpb_noCher_3d0ns_avg_npe_phys}
+%	\caption{\label{fig.crtTPB3ns} CRT as a function of the number of photoelectrons used to compute $\Delta t$, for LXe and SiPMs coated with TPB. A decay constant of 3 ns is assumed. The CRT is shown for several values of the PDE. }
+%\end{figure}
 
 
 We now consider the case in which conventional SiPMs, with a PDE as large as 50\% in the blue region, are used in a PETALO scanner. The SiPMs would be coated with TPB to shift the VUV light to blue. The main reason to consider this scenario is cost. VUV sensitive SiPMs are currently much more expensive (up to a factor of 10) than conventional SiPMs. It must be pointed out that such a cost difference can be quickly reduced with technological advances and massive production. Nevertheless, a PETALO scanner using TPB--coated SiPMs could be built with existing technology at a very competitive cost and is, therefore, interesting to study the effect of TPB on the CRT.
@@ -543,13 +543,9 @@ Figure \ref{fig.crtTPB} shows the CRT as a function of the
  The calculation takes into account the scintillation yield and decay time as well as the DOI resolution and the dependence of the refraction index in LXe with wavelength, but not the jitter due to the SiPM and electronics. 
  Here we must compare the CRT achieved for VUV sensitive SiPMs with a PDE of 15--20\% ($\sim$ 50 ps) with the CRT achieved for blue sensitive SiPMs coated with TPB, taking as a reference a PDE of 50\% (this corresponds to the
  PDE for blue light,  however, the CRT is computed taking into account the effect of the TPB absorption and subsequent re-emission).  The CRT in this case varies from 140 ps (for a decay constant $\tau_{\rm{TPB}} = 1$~ns) to 
- 200 ps (for a decay constant $\tau_{\rm{TPB}} = 3$~ns).  When the effect of the jitter of the SiPM and front-end electronics is added (figure \ref{fig.crtTPBjit}), the CRT (first photoelectron) for VUV-SiPMs is $\sim 100$~ps, while the CRT for TPB-coated SiPMs varies from
- 170 ps (for a decay constant $\tau_{\rm{TPB}} = 1$~ns) to 
- 220 ps (for a decay constant $\tau_{\rm{TPB}} = 3$~ns). Averaging $\Delta t$ over the first 10 photoelectrons 
- the CRT is reduced to 130 ps for a decay constant $\tau_{\rm{TPB}} = 1$~ns (figure \ref{fig.crtTPB1ns});
- 155 ps for a decay constant $\tau_{\rm{TPB}} = 2.2$~ns (figure \ref{fig.crtTPB2ns});  and
- 170 ps for a decay constant $\tau_{\rm{TPB}} = 3$~ns (figure \ref{fig.crtTPB3ns}). Notice that averaging over 
- several photoelectrons reduces the error in the CRT by a large factor in the case of SiPMs coated with TPB. 
+ 200 ps (for a decay constant $\tau_{\rm{TPB}} = 3$~ns).  When the effect of the jitter of the SiPM and front-end electronics is added (figure \ref{fig.crtTPBjit}), the CRT (first photoelectron) for VUV-SiPMs is $\sim 100$~ps, while the CRT for TPB-coated SiPMs varies from  170 ps (for a decay constant $\tau_{\rm{TPB}} = 1$~ns) to  220 ps (for a decay constant $\tau_{\rm{TPB}} = 3$~ns). Averaging $\Delta t$ over the first 10 photoelectrons  the CRT is reduced to 130 ps for a decay constant $\tau_{\rm{TPB}} = 1$~ns;  155 ps for a decay constant $\tau_{\rm{TPB}} = 2.2$~ns;  and 170 ps for a decay constant $\tau_{\rm{TPB}} = 3$~ns. Notice that averaging over several photoelectrons reduces the error in the CRT by a large factor in the case of SiPMs coated with TPB. 
+ 
+ %Averaging $\Delta t$ over the first 10 photoelectrons  the CRT is reduced to 130 ps for a decay constant $\tau_{\rm{TPB}} = 1$~ns (figure \ref{fig.crtTPB1ns});  155 ps for a decay constant $\tau_{\rm{TPB}} = 2.2$~ns (figure \ref{fig.crtTPB2ns});  and 170 ps for a decay constant $\tau_{\rm{TPB}} = 3$~ns (figure \ref{fig.crtTPB3ns}). Notice that averaging over several photoelectrons reduces the error in the CRT by a large factor in the case of SiPMs coated with TPB. 
  
  The results obtained with TPB are still very good. The best case scenario corresponds to a decay time of 1 ns
  (which can arguably be obtained with a thick enough coating) and yields a CRT of 130 ps, comparable to the value
