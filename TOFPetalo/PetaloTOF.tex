@@ -8,7 +8,7 @@
 %%% First page %%%
 \title{Investigation of the CRT performance of a PET scanner based in liquid xenon: A Monte Carlo study}
 \author[a,1]{J.J.~Gomez-Cadenas,\note{Corresponding author.}}
-\emailAdd{gomez@cern.ch}
+\emailAdd{gomez@mail.cern.ch}
 \author[a]{J.M.~Benlloch-Rodr\'iguez,}
 \author[a]{P.~Ferrario,}
 \author[b]{F.~Monrabal,}
@@ -51,13 +51,13 @@ directions and these photons are registered by a detection system. For a pair co
 pre-set energy window, centred on the 511 keV photopeak, and the timing difference stays within a pre-set time window, a coincidence event will be registered and constitutes a line-of-response (LOR) for image
 reconstruction.
 
-The reconstruction of the image in a PET system requires crossing many LORs which in turn define one emission point in the area under study. A LOR can be formed by: 1) a {\bf true coincidence}, which occur when both photons from an annihilation event are detected, neither photon undergoes any form of interaction prior to detection, and no other event is detected within the coincidence time-window; 2)
-a {\bf scattered coincidence}, which occurs when one or both detected photons undergo at least one Compton scattering interaction prior to detection. Since the direction of the photon changes due to the scattering process, the resulting coincidence event will, most likely, produce a wrong LOR. Scattered coincidences add a background to the true coincidence distribution, decreasing contrast and causing the isotope concentrations to be overestimated. They also add statistical noise to the signal; 3)  a {\bf random coincidences}, which occurs when two photons, not arising from the same annihilation event, impinge the detectors within the coincidence time window of the system. Random coincidences also add statistical noise to the data. 
+The reconstruction of the image in a PET system requires crossing many LORs which in turn define one emission point in the area under study. A LOR can be formed by: 1) a {\bf true coincidence}, which occurs when both photons from an annihilation event are detected, neither photon undergoes any form of interaction prior to detection, and no other event is detected within the coincidence time-window; 2)
+a {\bf scattered coincidence}, which occurs when one or both detected photons undergo at least one Compton scattering interaction prior to detection. Since the direction of the photon changes due to the scattering process, the resulting coincidence event will, most likely, produce a wrong LOR. Scattered coincidences add a background to the true coincidence distribution, decreasing contrast and causing the isotope concentrations to be overestimated. They also add statistical noise to the signal; 3)  a {\bf random coincidence}, which occurs when two photons, not arising from the same annihilation event, impinge the detectors within the coincidence time window of the system. Random coincidences also add statistical noise to the data. 
 
 The measurement of the time of flight (TOF) of the two 511 keV gammas recorded in coincidence in a PET scanner provides an effective way of reducing the background due to random coincidences and therefore increases the scanner sensitivity, provided that the coincidence resolving time (CRT) of the gammas is sufficiently good. Existing commercial systems based in LYSO crystals, such as the GEMINIS of Philips \cite{gemini}, reach CRT values of $\sim 600$~ps (FWHM). 
 
 Recent research, using small setups, has found much better results. For example Ferri et al. \cite{LysoFBK} report measurements using a pair of small LYSO crystals 
-($3 \times 3 \times 5 {\rm\ mm^3}$ read out by high-fill factor SiPMs. With this setup, a CRT of $157\pm 5$ ps was found at ambient temperature ($20\,^{\circ}{\rm C}$). The CRT was considerably improved working at $-20\,^{\circ}{\rm C}$, to a value of
+($3 \times 3 \times 5 {\rm\ mm^3}$ )read out by high-fill factor SiPMs. With this setup, a CRT of $157\pm 5$ ps was found at ambient temperature ($20\,^{\circ}{\rm C}$). The CRT was considerably improved working at $-20\,^{\circ}{\rm C}$, to a value of
  $125\pm 5$ ps. The limiting factor of the CRT at ambient temperature was the impact of the dark current rate (DCR).
 
 In this paper we present a Monte Carlo investigation of the CRT performance of a recently proposed new type of
@@ -91,7 +91,7 @@ Xenon is a noble gas. It responds to the interaction of ionizing radiation produ
 
 \begin{enumerate}
 \item {\bf A high scintillation yield (30\,000 photons per 511 keV gamma)}, twice as large as that of LYSO. 
-\item {\bf LXe is a continuous medium with uniform response}. The design of a compact system is much simpler, then, than when using solid detectors of fixed shape. It is also possible to provide a 3D measurement of the interaction point, and, thus, a high resolution measurement of the DOI. Furthermore, in LXe it is possible to identify Compton events depositing all their energy in the detector as separate-site interaction, due to its relatively large interaction length. This increases the sensitivity of the system, since those events can, in principle, be used for image reconstruction. 
+\item {\bf LXe is a continuous medium with uniform response}. The design of a compact system is much simpler, then, than when using solid detectors of fixed shape. It is also possible to provide a 3D measurement of the interaction point, and, thus, a high resolution measurement of the depth of interaction (DOI). Furthermore, in LXe it is possible to identify Compton events depositing all their energy in the detector as separate-site interaction, due to its relatively large interaction length. This increases the sensitivity of the system, since those events can, in principle, be used for image reconstruction. 
 \item {\bf The temperature of LXe at atmospheric pressure (160 K or -113 C)} is hot enough as to permit a simple cryostat, as well as normal operation of the SiPMs, but cold enough to reduce the DCR of the SiPMs by a factor $\sim 2^{13}$, thus making it essentially negligible. 
 \item {The cost} of LXe is 3 \$/cc to be compared with $\sim$ 40--50 \$/cc in the case of LYSO. 
  \end{enumerate}
@@ -120,7 +120,7 @@ The contribution of the intrinsic terms, ($R_r$~and $R_i$) has been measured to 
 overall resolution of the order of 12\% FWHM for 511 keV gammas, similar to that of LYSO detectors. 
 
 The spatial resolution in the (x,y) coordinates (transverse to the gammas line of flight) is obtained in the LXSC2 by the weighted pulses in the SiPMs. The digital resolution would be
-$p/\sqrt{12}$, where $p$~is the pitch. With a pitch of 6 mm a 1.7 mm rms or 4 mm FWHM could be expected. Weighting with the SiPM amplitude improves the resolution to about 2 mm FWHM. The depth of interaction (DOI) is obtained by computing the ratio between the
+$p/\sqrt{12}$, where $p$~is the pitch. With a pitch of 6 mm a 1.7 mm rms or 4 mm FWHM could be expected. Weighting with the SiPM amplitude improves the resolution to about 2 mm FWHM. The DOI is obtained by computing the ratio between the
 total signal recorded in the entry and exit face, and its resolution is found to be also 2 mm FWHM. 
 
 \subsection*{VUV-sensitive SiPMs versus SiPMs coated with TPB}
