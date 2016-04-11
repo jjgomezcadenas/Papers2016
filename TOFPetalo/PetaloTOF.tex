@@ -1,98 +1,27 @@
-\documentclass[review]{elsarticle}
-\usepackage{subfig}
-\usepackage{float} %Permite manejar/mover/partir mejor figuras y tablas
-\usepackage{lineno,hyperref}
-%%\usepackage[none]{hyphenat}
-\usepackage{eurosym}
-\modulolinenumbers[5]
+\documentclass[11pt,a4paper]{article}\usepackage{jinstpub}
 
+\bibliographystyle{ieeetr}
 
-%\usepackage[affil-it]{authblk}
-%\usepackage[affil-it]{authblk}
+\input{Commands}
 
-\journal{}
-
-%%%%%%%%%%%%%%%%%%%%%%%
-%% Elsevier bibliography styles
-%%%%%%%%%%%%%%%%%%%%%%%
-%% To change the style, put a % in front of the second line of the current style and
-%% remove the % from the second line of the style you would like to use.
-%%%%%%%%%%%%%%%%%%%%%%%
-
-%% Numbered
-%\bibliographystyle{model1-num-names}
-
-%% Numbered without titles
-%\bibliographystyle{model1a-num-names}
-
-%% Harvard
-%\bibliographystyle{model2-names.bst}\biboptions{authoryear}
-
-%% Vancouver numbered
-%\usepackage{numcompress}\bibliographystyle{model3-num-names}
-
-%% Vancouver name/year
-%\usepackage{numcompress}\bibliographystyle{model4-names}\biboptions{authoryear}
-
-%% APA style
-%\bibliographystyle{model5-names}\biboptions{authoryear}
-
-%% AMA style
-%\usepackage{numcompress}\bibliographystyle{model6-num-names}
-
-%% `Elsevier LaTeX' style
-\bibliographystyle{elsarticle-num}
-%%%%%%%%%%%%%%%%%%%%%%%
-
-%\setcounter{Maxaffil}{0}
-%\renewcommand\Affilfont{\itshape\small}
-
-\begin{document}
-
-
-
-\begin{frontmatter}
-
+%%% First page %%%
 \title{Investigation of the CRT performance of a PET scanner based in liquid xenon: A Monte Carlo study}
-
-\author{J.J. Gomez-Cadenas, J.M. Benlloch-Rodr\'iguez, P. Ferrario, }
-\address{Instituto de F\'isica Corpuscular (IFIC), CSIC \& Universitat de Val\`encia,
+\author[a,1]{J.J.~Gomez-Cadenas,\note{Corresponding author.}}
+\emailAdd{gomez@cern.ch}
+\author[a]{J.M.~Benlloch-Rodr\'iguez,}
+\author[a]{P.~Ferrario,}
+\author[b]{F.~Monrabal,}
+\author[a]{J.~Rodr\'iguez,}
+\author[c]{J.F. Toledo}
+\affiliation[a]{Instituto de F\'isica Corpuscular (IFIC), CSIC \& Universitat de Val\`encia,\\
 Calle Catedr\'atico Jos\'e Beltr\'an, 2, 46980 Paterna, Valencia, Spain}
-\author{F. Monrabal}
-\address{G.}
-\author{J. Rodr\'iguez}
-\address{Instituto de F\'isica Corpuscular (IFIC), CSIC \& Universitat de Val\`encia,
-Calle Catedr\'atico Jos\'e Beltr\'an, 2, 46980 Paterna, Valencia, Spain}
-\author{J.F. Toledo}
-\address{Instituto de Instrumentaci\'on para Imagen Molecular (I3M), Universitat Polit\`ecnica de Val\`encia\\ 
+\affiliation[b]{Department of Physics, University of Texas at Arlington\\
+Arlington, Texas 76019, USA}
+\affiliation[c]{Instituto de Instrumentaci\'on para Imagen Molecular (I3M), Universitat Polit\`ecnica de Val\`encia\\ 
 Camino de Vera, s/n, Edificio 8B, 46022 Valencia, Spain}
 
-%\maketitle
 
-
-%PETALO, a positron emission time-of-flight apparatus using liquid xenon
-%\tnotetext[mytitlenote]{Fully documented templates are available in the elsarticle package on \href{http://www.ctan.org/tex-archive/macros/latex/contrib/elsarticle}{CTAN}.}
-
-%% Group authors per affiliation:
-%\input{Authors.tex}
-
-%\author{J.J. Gomez-Cadenas, J.M. Benlloch-Rodr\'iguez, P. Ferrario, F. Monrabal, J. Rodr\'iguez and J.F. Toledo}
-%\address{IFIC (U. Valencia/CSIC)}
-%\fntext[myfootnote]{Since 1880.}
-
-%% or include affiliations in footnotes:
-%\author[mymainaddress,mysecondaryaddress]{Elsevier Inc}
-%\ead[url]{www.elsevier.com}
-%
-%\author[mysecondaryaddress]{Global Customer Service\corref{mycorrespondingauthor}}
-%\cortext[mycorrespondingauthor]{Corresponding author}
-%\ead{support@elsevier.com}
-%
-%\address[mymainaddress]{1600 John F Kennedy Boulevard, Philadelphia}
-%\address[mysecondaryaddress]{360 Park Avenue South, New York}
-
-\begin{abstract}
-The measurement of the time of flight of the two 511 keV gammas recorded in coincidence in a PET scanner provides an effective way of reducing the random background and therefore increases the scanner sensitivity, provided that the coincidence resolving time (CRT) of the gammas is sufficiently good. Existing commercial systems based in LYSO crystals, such as the GEMINIS of Philips, reach CRT values of 
+\abstract{The measurement of the time of flight of the two 511 keV gammas recorded in coincidence in a PET scanner provides an effective way of reducing the random background and therefore increases the scanner sensitivity, provided that the coincidence resolving time (CRT) of the gammas is sufficiently good. Existing commercial systems based in LYSO crystals, such as the GEMINIS of Philips, reach CRT values of 
 $\sim 600$~ps (FWHM). 
 %The CRT attained in small setups, however, is much better (around 100-200 ps, depending on the experimental conditions). 
 
@@ -101,17 +30,14 @@ $\sim 600$~ps (FWHM).
 In this paper we present a Monte Carlo investigation of the CRT performance of a
 PET scanner exploiting the scintillating properties of liquid xenon. We find that an excellent CRT of 60--70 ps (depending on the PDE of the sensor) can be obtained if the scanner is instrumented with silicon photomultipliers (SiPMs) sensitive to the ultraviolet light emitted by xenon. Alternatively, a CRT of 120 ps can be obtained instrumenting the scanner with (much cheaper) blue-sensitive SiPMs coated with a suitable wavelength shifter.
 These results show the excellent time of flight capabilities of a PET device based in liquid xenon.   
- \end{abstract}
+}
 
-\begin{keyword}
-PET \sep TOF \sep liquid xenon \sep energy resolution \sep
- high sensitivity \sep coincidence resolving time (CRT) \sep SiPMs \sep LYSO.
-\end{keyword}
+\keywords{PET, TOF, liquid xenon, energy resolution,
+ high sensitivity, coincidence resolving time (CRT), SiPMs, LYSO}
 
-\end{frontmatter}
+\begin{document}
 
-%\linenumbers
-\input{../Commands}
+\maketitle
 
 \section{Introduction}
 Positron Emission Tomography (PET) is a non invasive imaging technique that produces a three-dimensional image of functional processes --it does not show anatomic features, but it rather  measures the metabolic activity of the cells-- in the body. PET is used in
@@ -121,7 +47,7 @@ biologically active molecule doped with a radioactive isotope, called tracer (a 
 subsequently annihilate with electrons after traveling a short distance within the subject.
 Each annihilation produces two 511 keV photons emitted most of the time in opposite
 directions and these photons are registered by a detection system. For a pair coincidence event, if the energy of two photons stays within a
-pre-set energy window, centered on the 511 keV photopeak, and the timing difference stays within a pre-set time window, a coincidence event will be registered and constitutes a line-of-response (LOR) for image
+pre-set energy window, centred on the 511 keV photopeak, and the timing difference stays within a pre-set time window, a coincidence event will be registered and constitutes a line-of-response (LOR) for image
 reconstruction.
 
 The reconstruction of the image in a PET system requires crossing many LORs which in turn define one emission point in the area under study. A LOR can be formed by: 1) a {\bf true coincidence}, which occur when both photons from an annihilation event are detected, neither photon undergoes any form of interaction prior to detection, and no other event is detected within the coincidence time-window; 2)
@@ -154,7 +80,7 @@ PET scanner, called PETALO (Positron Electron TOF Apparatus using Liquid xenOn).
 
 \begin{figure}[!bhtp]
 	\centering
-	\includegraphics[scale=0.5]{../img/ScintillationSpectrumLXe.pdf}
+	\includegraphics[scale=0.5]{img/ScintillationSpectrumLXe.pdf}
 	\caption{\label{fig.spectrumLXe} Emission spectrum of scintillation photons in LXe.}
 \end{figure}
 
@@ -176,8 +102,8 @@ The possibility of building a LXe PET based on the excellent properties of LXe a
 
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[scale=0.20]{../img/Box_2facces_1.jpg}
-	\includegraphics[scale=0.20]{../img/Box_2facces_3.jpg}
+	\includegraphics[scale=0.20]{img/Box_2faces_1.jpg}
+	\includegraphics[scale=0.20]{img/Box_2faces_3.jpg}
 	\caption{The LXSC2 instruments the entry and exit faces of the box (relative to the photon line of flight) with silicon photomultipliers (SiPMs), which can be eventually coated with TPB. The non-instrumented faces are covered by reflecting Teflon (optionally also coated with TPB).}\label{fig.box} 
 \end{figure}
 
@@ -200,7 +126,7 @@ total signal recorded in the entry and exit face, and its resolution is found to
 
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[scale=0.6]{../img/PDEVUV.png}
+	\includegraphics[scale=0.6]{img/PDEVUV.png}
 	\caption{Photo detection efficiency (PDE) of different VUV sensitive SiPMs
 	(from reference \cite{vuv}). The MEG devices are
 	manufactured by Hamamatsu Photonics, while the FBK-2010 and the RGB-HD
@@ -209,7 +135,7 @@ total signal recorded in the entry and exit face, and its resolution is found to
 
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[scale=0.6]{../img/TPBSpectrum.png}
+	\includegraphics[scale=0.6]{img/TPBSpectrum.png}
 	\caption{Visible re-emission spectrum for a TPB film illuminated with 
 	128, 160, 175, and 250 nm light. All spectra are normalized to unit area.
 	Figure from reference \cite{Gehman:2011xm}.  }\label{fig.tpb} 
@@ -217,14 +143,14 @@ total signal recorded in the entry and exit face, and its resolution is found to
 
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[scale=0.6]{../img/TPBEfficiency.png}
+	\includegraphics[scale=0.6]{img/TPBEfficiency.png}
 	\caption{Total integrated fluorescence efficiency for a thin layer of TPB, as a function of input  photon wavelength.
 	Figure from reference \cite{Gehman:2011xm}.  }\label{fig.tpbeff} 
 \end{figure}
 
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[scale=0.6]{../img/TPBdecays.pdf}
+	\includegraphics[scale=0.6]{img/TPBdecays.pdf}
 	\caption{Evolution of the decay constant of TPB as a function of the thickness of the TPB layer compared
 	with the thickness of the substrate (a thin quartz film). The TPB decay constant decreases as the thickness of the TPB layer (thus its concentration) increases, reaching an asymptotic value of 2.2 ns. Figure from \cite{TPBtau}.  }\label{fig.tpbtau} 
 \end{figure}
@@ -283,7 +209,7 @@ I^R_2 =\frac{e^{-t/\tau_2}}{\tau_2}
 
 \begin{figure}[!bhtp]
 	\centering
-	\includegraphics[scale=0.6]{../img/Fit10ns_ROOT.pdf}
+	\includegraphics[scale=0.6]{img/Fit10ns_ROOT.pdf}
 %	\includegraphics[width=.5\textwidth]{../img/TOFPET.jpg}
 	\caption{\label{fig.scint} Intensity of scintillation in LXe, fitted to equation \ref{eq.tot}. }
 \end{figure}
@@ -340,7 +266,7 @@ $2.4 \times 2.4 \times 5 {\rm ~cm^3}$, facing each other in opposite sides of a 
 
  \begin{figure}[!bthp]
 	\centering
-	\includegraphics[scale=0.4]{../img/PetaloSetup.png}
+	\includegraphics[scale=0.4]{img/PetaloSetup.png}
 	\caption{\label{fig.psetup} Monte Carlo simulation of gamma interactions in the LXe setup, as 
 	described in the text.}
 \end{figure}
@@ -373,7 +299,7 @@ $\delta \Delta t$, is defined as the variance\footnote{expressed in number of FW
 
 \begin{figure}[!bhtp]
 	\centering
-	\includegraphics[scale=0.6]{../img/LXe_n_lambda.pdf}
+	\includegraphics[scale=0.6]{img/LXe_n_lambda.pdf}
 	\caption{\label{fig.nlambda} LXe refraction index as a function of the wavelength of the optical photon.}
 \end{figure}
 
@@ -389,7 +315,7 @@ We start our study by assuming that the refraction indices in both media are con
 
 \begin{figure}[!bhtp]
 	\centering
-	\includegraphics[scale=0.36]{../img/FirstPEScintLXeLYSO.png}
+	\includegraphics[scale=0.36]{img/FirstPEScintLXeLYSO.png}
 	\caption{\label{fig.firstPE} Arrival time of the first photoelectron in LXe (blue line) and LYSO (green dotted), after subtracting the time of flight of the incident gamma ($\Delta d_g/c$) and the time of flight of the scintillation photons ($n \cdot \Delta d_p/c$). }\label{fig.FirstPE}
 \end{figure} 
 
@@ -411,7 +337,7 @@ thick, would have a DOI resolution of $2.3 \times 20{\rm mm}/\sqrt{12} = 5.8$~mm
 
 \begin{figure}[!bhtp]
 	\centering
-	\includegraphics[scale=0.36]{../img/DTOFLXeLYSO.png}
+	\includegraphics[scale=0.36]{img/DTOFLXeLYSO.png}
 	\caption{\label{fig.dtof} $\delta \Delta t$ in LXe (blue line) and LYSO (green dotted line). The
 	histograms are obtained introducing a spatial resolution of 2 mm for the transverse coordinates and
 	the DOI, fixing the wavelength of the scintillation and the refraction index and setting the PDE of the SiPMs to one. }
@@ -419,7 +345,7 @@ thick, would have a DOI resolution of $2.3 \times 20{\rm mm}/\sqrt{12} = 5.8$~mm
 
 \begin{figure}[!bhtp]
 	\centering
-	\includegraphics[scale=0.36]{../img/PetaloTOF/CRTvsPDELXeLYSONoJitterFstPE.png}
+	\includegraphics[scale=0.36]{img/CRTvsPDELXeLYSONoJitterFstPE.png}
 	\caption{\label{fig.crt1} CRT as a function of the PDE in LXe (blue line) and LYSO (green dotted line) computed using the first photoelectron. The calculation takes into account the scintillation yield and decay time as well as the DOI resolution but does not include
 	the dependence of the refraction index in LXe with wavelength.}
 \end{figure}
@@ -431,7 +357,7 @@ thick, would have a DOI resolution of $2.3 \times 20{\rm mm}/\sqrt{12} = 5.8$~mm
 \subsection*{Effect of the refraction index}
 \begin{figure}[!bhtp]
 	\centering
-	\includegraphics[scale=0.4]{../img/VelocityDistrLXe.pdf}
+	\includegraphics[scale=0.4]{img/VelocityDistrLXe.pdf}
 	\caption{\label{fig.vLXe} Distribution of the velocity of scintillation photons propagating in LXe.}
 \end{figure}
 
@@ -444,7 +370,7 @@ We also introduce the refraction index of the SiPM entrance window, which we tak
 
 \begin{figure}[!bhtp]
 	\centering
-	\includegraphics[scale=0.30]{../img/PetaloTOF/CRTvsPDE_phys_LXeLYSONoJitterFstPE.png}
+	\includegraphics[scale=0.30]{img/CRTvsPDE_phys_LXeLYSONoJitterFstPE.png}
 	\caption{\label{fig.crt2} CRT as a function of the PDE in LXe (blue line) and LYSO (green dotted line) computed using the first photoelectron. The calculation takes into account the scintillation yield and decay time as well as the DOI resolution and the dependence of the refraction index in LXe with wavelength. The effect of Fresnel reflections
 	due to the mismatch between the LXe (LYSO) refraction index and that of the SiPM is also taken into
 	account.  }
@@ -461,19 +387,19 @@ Figure \ref{fig.crt2} shows the CRT as a function of the
  
  \begin{figure}[!bhtp]
 	\centering
-	\includegraphics[scale=0.30]{../img/PetaloTOF/CTR_jitter_phys.png}
+	\includegraphics[scale=0.30]{img/CTR_jitter_phys.png}
 	\caption{\label{fig.crt3} CRT as a function of the PDE in LXe (blue line) and LYSO (green dotted line) computed using the first photoelectron. The calculation includes the effect of the SiPM  and front-end electronics jitter.}
 \end{figure}
 
  \begin{figure}[!bhtp]
 	\centering
-	\includegraphics[scale=0.30]{../img/PetaloTOF/lxe_noCher_avg_npe_phys.png}
+	\includegraphics[scale=0.30]{img/lxe_noCher_avg_npe_phys.png}
 	\caption{\label{fig.crt_avg_LXe} CRT as a function of the number of photoelectrons used to compute $\Delta t$, for LXe. The CRT is shown for several values of the PDE.}
 \end{figure}
 
  \begin{figure}[!bhtp]
 	\centering
-	\includegraphics[scale=0.30]{../img/PetaloTOF/lyso_noCher_avg_npe_phys.png}
+	\includegraphics[scale=0.30]{img/lyso_noCher_avg_npe_phys.png}
 	\caption{\label{fig.crt_avg_LYSO} CRT as a function of the number of photoelectrons used to compute $\Delta t$, for LYSO. The CRT is shown for several values of the PDE.}
 \end{figure}
 
@@ -507,13 +433,13 @@ to $-20\,^{\circ}{\rm C}$}, e.g, reducing the DCR by a factor 16). The obvious a
 
 \begin{figure}[!bhtp]
 	\centering
-	\includegraphics[scale=0.4]{../img/PetaloTOF/tpb_decays_pde_500ps.png}
+	\includegraphics[scale=0.4]{img/tpb_decays_pde_500ps.png}
 	\caption{\label{fig.crtTPB} CRT as a function of the PDE in LXe (red line) and LXe coated  with TPB, assuming several decay times. The CRT is computed using the first photoelectron. The calculation takes into account the scintillation yield and decay time as well as the DOI resolution and the dependence of the refraction index in LXe with wavelength. }
 \end{figure}
 
 \begin{figure}[!bhtp]
 	\centering
-	\includegraphics[scale=0.4]{../img/PetaloTOF/tpb_decays_jitter_500ps.png}
+	\includegraphics[scale=0.4]{img/tpb_decays_jitter_500ps.png}
 	\caption{\label{fig.crtTPBjit} CRT as a function of the PDE in LXe (red line) and LXe coated  with TPB, assuming several decay times. The CRT is computed using the first photoelectron. The effect of the jitter of the SiPM and electronics is included. }
 \end{figure}
 
@@ -567,10 +493,10 @@ to $-20\,^{\circ}{\rm C}$.
 We have studied the CRT that can be obtained by a PETALO scanner based in the LXSC2 cell. The intrinsic resolution of the cell (corresponding to an ideal VUV sensitive sensor of PDE one and forcing a fixed refraction index) is 12 ps, of which DOI uncertainty contributes with about 5 ps. Introducing a PDE of 15\%, corresponding to the best currently achieved by VUV-sensitive SiPMs, still results in an excellent CRT of  35 ps. Including the effect of the variable refraction index and Fresnel reflections, a CRT of 55 ps is found for a PDE of 15\%. Adding the effect of the jitter of the SiPM and electronics spoils the CRT to some 115 ps for a PDE of 15\%. Averaging $\Delta t$~over the first few photoelectrons, one recovers a CRT of 80 ps for a PDE of 15\% and 70 ps for a (technically feasible) PDE of 20\%. It follows that a PETALO scanner based in the LXSC2 cell equipped with VUV sensitive SiPMs of relatively large PDE (15\% or better) could reduce the CRT of a large system well below the 100 ps threshold. 
 
 On the other hand, we find that using blue sensitive SiPMs coated with TPB results in a CRT that could be as good as
-130--155 ps (for $\tau_{\rm{TPB}} = 1-2.2$~ns). These values still compete with the best results obtained for LYSO.  In summary, it appears feasible to build a PETALO scanner with existing technology, combining the advantages of large sensitivity (due to increased large axial acceptance afforded by the low cost of xenon compared with LYSO), good energy and spatial resolution, and excellent CRT.     
+130--155 ps (for $\tau_{\rm{TPB}} = 1-2.2$~ns). These values still compete with the best results obtained for LYSO.  In summary, it appears feasible to build a PETALO scanner with existing technology, combining the advantages of large sensitivity (due to increased large axial acceptance afforded by the low cost of xenon compared with LYSO), good energy and spatial resolution, and excellent CRT.  
 
-\section*{}
+\acknowledgmentsThe authors acknowledge support from the following agencies and institutions: the European Research Council (ERC) under the Advanced Grant 339787-NEXT; the Ministerio de Econom\'õa y Competitividad of Spain under grants CONSOLIDER-Ingenio 2010 CSD2008-0037 (CUP), FIS2014-53371-C04 and the Severo Ochoa Program SEV- 2014-0398; we acknowledge enlightening discussions with J. Varela and C. Lerche.
 
-\bibliography{biblio.bib}
+\bibliography{biblio}
 
 \end{document}
