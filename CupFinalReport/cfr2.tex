@@ -1,7 +1,7 @@
 
 \documentclass[a4paper,11pt,oneside]{article}
 \usepackage[a4paper,vmargin={1.5cm,1.5cm},width=16cm]{geometry}
-\usepackage[style=verbose-inote,doi=false,sortcites=true,block=space, backend=bibtex]{biblatex}
+%\usepackage[style=verbose-inote,doi=false,sortcites=true,block=space, backend=bibtex]{biblatex}
 \usepackage[utf8]{inputenc}
 \usepackage{textcomp}
 \usepackage[spanish]{babel}
@@ -15,7 +15,8 @@
 \usepackage[T1]{fontenc}
 \usepackage{hyperref}
 %% Added to help mimic structure.
-\usepackage[many]{tcolorbox}
+%\usepackage[many]{tcolorbox}
+\usepackage{tcolorbox}
 \usepackage{soul}
 \usepackage{color}
 \usepackage{lastpage}
@@ -24,7 +25,7 @@
 %\usepackage[utf8]{inputenc}
 %\usepackage[spanish]{babel}
 %\usepackage[a4paper,height=26cm,width=17cm]{geometry}
-%\usepackage{graphicx}
+%\usepackage{graphicx} d
 %\usepackage{epsfig,rotating}
 %\usepackage{amssymb}
 %\usepackage{mathrsfs}
@@ -38,8 +39,15 @@
 \usepackage{multirow}
 %\usepackage{enumitem}
 
+%\usepackage[hyphenbreaks]{breakurl}
 %\usepackage[hyphens]{url}
+
 \usepackage{hyperref}
+\hypersetup{breaklinks=true}
+
+
+%\usepackage[hyphens]{url}
+
 
 
 %% Hack to make math formulas bold in section titles
@@ -50,9 +58,6 @@
   \boldmath
 }
 \makeatother
-
-\bibliography{biblio}
-
 
 \begin{document}
 
@@ -210,7 +215,7 @@ A few months after the withdrawal of the IFAE and CIEMAT groups, the regular res
 
 The project submitted in 2011, requested essential additional funding, not covered by CUP. The negative result implied a major logistic drawback and a serious blow for the collaboration. In 2012, a new research project was submitted, to a different committee (general physics, FIS), given the obvious bias of the FPA committee. The project obtained a B and modest funding. In 2013, the spokesperson of NEXT was granted the first (and the only one, to date) advanced grant of the ERC in experimental particle physics in Spain. In 2014, another project was submitted to FIS, which obtained a top mark. 
 
-The perception of the consortium and the international collaboration is that, in spite of the demonstrated excellence of the project (availed by the reports of the LSC scientific committee as well as by the excellent reports produced by external evaluators, in particular in the ERC), its capability to attract external funding, and its importance for the scientific case of the LSC, a bias still exist in FPA, mostly related with the opposition to the project of the IFAE group. Indeed, the ex-director of IFAE, Dr. Mateo Cavalli-Svorza has recently (in 2015) expressed publicly (in a seminar at the ALBA seminar) his enmity towards the spokesperson of the experiment. 
+The perception of the consortium and the international collaboration is that, in spite of the demonstrated excellence of the project (availed by the reports of the LSC scientific committee as well as by the excellent reports produced by external evaluators, in particular in the ERC), its capability to attract external funding, and its importance for the scientific case of the LSC, a bias still exist in FPA, mostly related with the opposition to the project of the IFAE group. Indeed, the ex-director of IFAE, Dr. Mateo Cavalli-Sforza has recently (in 2015) expressed publicly (in a seminar at the ALBA seminar) his enmity towards the spokesperson of the experiment. 
 
 The situation is not fully solved yet, and poses a serious threat to the future of the collaboration, since external collaborators from other countries may feel that the project is not sufficiently supported in Spain. It also poses a serious threat for the future of the Canfranc laboratory, whose reputation would suffer very much should the NEXT experiment be forced to move to a different underground laboratory. 
 
@@ -305,6 +310,9 @@ Netherlands in June 2014
 
 11.- Problems and suggestions
 %\bibliographystyle{elsarticle-num}
+
+\bibliographystyle{plain}
+\bibliography{biblio}
 
 \end{document}
 
