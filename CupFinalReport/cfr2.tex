@@ -1,23 +1,45 @@
-\documentclass[11pt,a4paper]{article}
+
+\documentclass[a4paper,11pt,oneside]{article}
+\usepackage[a4paper,vmargin={1.5cm,1.5cm},width=16cm]{geometry}
+\usepackage[style=verbose-inote,doi=false,sortcites=true,block=space, backend=bibtex]{biblatex}
 \usepackage[utf8]{inputenc}
+\usepackage{textcomp}
 \usepackage[spanish]{babel}
-\usepackage[a4paper,height=26cm,width=17cm]{geometry}
+\usepackage{microtype}
+\usepackage{lmodern}
 \usepackage{graphicx}
-\usepackage{epsfig,rotating}
-\usepackage{amssymb}
-\usepackage{mathrsfs}
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{multirow}
+\usepackage{fancyhdr}
+\usepackage{booktabs}
 \usepackage{eurosym}
-\usepackage{dcolumn}
-\usepackage{cite}
+\usepackage{mathptmx}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+%% Added to help mimic structure.
+\usepackage[many]{tcolorbox}
+\usepackage{soul}
+\usepackage{color}
+\usepackage{lastpage}
+
+%\documentclass[11pt,a4paper]{article}
+%\usepackage[utf8]{inputenc}
+%\usepackage[spanish]{babel}
+%\usepackage[a4paper,height=26cm,width=17cm]{geometry}
+%\usepackage{graphicx}
+%\usepackage{epsfig,rotating}
+%\usepackage{amssymb}
+%\usepackage{mathrsfs}
+%\usepackage{amsmath}
+%\usepackage{amsfonts}
+%\usepackage{multirow}
+%\usepackage{eurosym}
+%\usepackage{dcolumn}
+%\usepackage{cite}
 
 \usepackage{multirow}
 %\usepackage{enumitem}
 
-\usepackage[hyphens]{url}
-%\usepackage{hyperref}
+%\usepackage[hyphens]{url}
+\usepackage{hyperref}
 
 
 %% Hack to make math formulas bold in section titles
@@ -29,6 +51,7 @@
 }
 \makeatother
 
+\bibliography{biblio}
 
 
 \begin{document}
@@ -94,7 +117,7 @@ to astroparticle physics in general (neutrino physics, cosmology, etc.)
 %\item 
 %A european training network, called INVISIBLES, coordinates by professor B. Gavela, from IFT. 
 %%
-%\item A european project of large infrastructures called LAGNA-LBNO. The spanish IP of the project is  professor J.J. Gómez-Cadenas, for IFIC, who acts also as spokesperson of NEXT.
+%\item A european project of large infrastructures called LAGNA-LBNO. The spanish IP of the project is  professor J.J. GÃ³mez-Cadenas, for IFIC, who acts also as spokesperson of NEXT.
 %\end{enumerate}
 
 CUP main goal was the construction, commissioning and operation of the NEXT detector\footnote{\url{http://next.ific.uv.es/next/}}, a high-pressure, xenon (HPXe) Time Projection Chamber (TPC), whose goal was to search for neutrinoless double beta decay  (\bbonu) events in xenon enriched at 90\% in the isotope \XE. The first phase of the experiment, called NEW, deploying 10 kg of xenon, is currently being commissioned at the LSC.The second phase of the experiment, NEXT-100, will deploy 100 kg of xenon. A third phase, deploying up to one ton of xenon, is actively being discussed, with strong international interest.
@@ -113,40 +136,7 @@ CUP main goal was the construction, commissioning and operation of the NEXT dete
 
 
 \section{\bf \textsf{Main advances and profits }}
-
-CAFE has result into several advances
-\begin{enumerate}
-\item {\bf It has enhanced the visibility of the LSC} by participating into
-European studies devoted to the long term planning for large infrastructures
-in Europe such as of such as LAGUNA-LBNO and Euro-$\nu$.
-\item {\bf It has contributed to the  creation of a new generation of European physicists}
-with expertness in phenomenology of relevance for underground physics
-by our participation in two consecutive International Training Networks
-and a Network for Research and Innovation Staff Exchange, all
-funded by the European Commission, as reported below. 
-\item  {\bf It has  produced a large number of scientific articles, which have
-advanced quantitatively the state-of-the-art of the field.} The total
-number of references of published articles by the CAFE senior members
-in international peer reviewed journals 
-since 2008 is 70  (listed below) that  have  received a total of 
-more than 3000 citations in the SPIRES data basis which is the one commonly used
-in our field for reference.
-\end{enumerate}
-
-NEXT has result in several advances:
-\begin{enumerate}
-\item {\bf It has advanced the field of underground physics instrumentation}, with the construction of the NEXT detector series. The large prototype which has operated at IFIC since 2011 (NEXT-DEMO) was the largest HPXe electroluminescent TPC in the World, until the construction of NEW, currently being commissioned at the LSC. The detectors have shown the feasibility of the electroluminescent technology, have demonstrated the excellent energy resolution that can be achieved in xenon gas, and have demonstrated  the availability of a unique topological signature in HPXe, e.g, the capability to fully reconstruct the two electrons emitted in \bb\ decay, providing a powerful tool to discriminate against backgrounds. 
-\item {\bf It has resulted in a cutting-edge experiment}, which will be searching for \bbonu\ decays during the next few years, with chances of making or contributing to a major discovery. 
-\item {\bf It has bought to the field a new technology}, that of the HPXe-EL, which is currently considered one of the best candidates for the next generation of \bbonu\ experiments.
- \item {\bf It has resulted in an international collaboration}, involving groups from Portugal, United States, Russia and Colombia. Other groups (Poland, Australia), are currently considering joining the experiment.
- \item {\bf It has attracted external funding}, with contributions to the experiment from all the members of the collaboration, and in particular from the US.
-  \item {\bf It has resulted in an Advanced Grant of the ERC}, granted to the spokesperson of NEXT, prof. J.J. G\'omez Cadenas, who has acted as co-PI of CUP. 
-   \item {\bf It has boosted the scientific interest of the LSC}, as intended in our proposal. Currently NEXT is the most important experiment in the Canfranc Underground Laboratory and the only one with truly international projection. 
-  \item {\bf It has produced a major scientific spinoff, called PETALO}, a new concept for a full-body, TOF-capable PET using xenon. Currently, a patent has been filled and two scientific papers have been published on the new concept. A new collaboration is being formed to explore the scientific potential and commercial applications of PETALO. 
-   \item {\bf It has contributed in an important way to science outreach}. See for example:
-   \url{http://www.jotdown.es/2012/09/david-nygren-y-alessandro-bettini-the-physics-as-fountain-of-eternal-youth/}
-   http://www.jotdown.es/2013/11/coversaciones-de-fisica-en-el-santa-cristina-ariella-cattai-y-concha-gonzalez-garcia/
-\end{enumerate}
+\input{src/AdvancesAndProfits.tex}
 
 \section{\bf \textsf{ Key Indicators}}
 
@@ -157,35 +147,11 @@ In the CUP proposal, we stated:
 We propose a very simple and efficient evaluation scheme for CUP. The  activities are focused in the LSC, which has an international scientific committee, composed by high-reputation specialists in underground physics. This committee is perfectly suited to evaluate our progress in all the areas proposed.
 \end{quotation}
 
-Here we present a summary of the reports of the LS Scientific Committee (LSCSC) since 2010. 
+In this section we present the reports of the LS Scientific Committee (LSCSC) since 2010, together with a discussion concerning the implementations of the committee recommendations. The committee reports are copied verbatim. {\em Emphasis} is used to highlight key aspects of the text, while {\bf bold face} is only used if the committee used it in the original report. Footnotes, often added to specific recommendations, add relevant comments or reference to bibliography. 
 
-\subsubsection*{2010-April}
-\begin{quotation}
-LSC Scientific Committee\\6th Meeting\\April 15 and 16, 2010\\
-EXP-05-2008 (NEXT)\\
-The   Committee   {\bf commends   the   Collaboration   for   its   effort   to   improve   its organization, working relationship among members, and its project management. The establishment of a Steering Committee to choose the readout system technology was a positive step. The effort to involve foreign institutions is also laudable. NEXT is making excellent progress;} however the Committee has some recommendations.
-The Committee recommends:
-\begin{itemize}
-\item that the collaboration finalize the selection of a technology choice, a plan of action, and write a schedule,
-\item  that the Collaboration design a prototype to bridge from NEXT-1 to NEXT-100, with long drift distances matching those of NEXT-100,
-\item that the Collaboration have a final readout system operating under 10 Atm of Xe gas,
-that  the  Collaboration  write  a  detailed  plan  for  radioactive  screening  of construction materials
-\item  that the Collaboration establish a presence at the Laboratory to determine their needs for counting, etc.,
-\item that  the  Collaboration make a study  of  the safety  issues  with  10  Atm.  gas chambers underground, and begin discussions with the Laboratory personnel.
-\item that the Collaboration write a Project Management Plan including a budget, schedule and names of persons responsible for specific tasks,
-\end{itemize}\end{quotation}
+\input{lscsc/2010.tex}
+\input{lscsc/2011.tex}
 
-\subsubsection*{2010-October}
-\begin{quotation}
-LSC Scientific Committee\\7th Meeting\\October 7th and 8th, 2010\\
-EXP-05-2008 (NEXT)\\
-
-The Committee applauds the steps taken to further develop the strength of the collaboration, with an increasing commitment of the US groups and the enlargement to groups of the Universidad de Aveiro in Portugal and of the Universidad Antonio Nari\~no in Columbia.The Committee was pleased by the informative presentations and the new format of the progress report. In general the project is making steady progress in its R\&D phase of the experiment. The most critical topic presented is the choice of the readout technology. The Committee observes that the Micro-Megas readout was tested at the Universities of Saragossa and Coimbra, and achieved an energy resolution of about 3\% at 10-atm pressure to be compared to the needed one, which is better than 1\%. The groups at LBNL, TAMU, IFIC, UPV, Nari\~no, Coimbra and CIEMAT are working on electroluminescence (EL) read out, which, however, has not yet demonstrated full feasibility. The Committee also observes that the Collaboration is facing the problem of non availability of radio-pure PMTs, which can take 10-15 bar pressure, by encasing them into quartz tubes. This feature allows to add a light guide function helping in the light collection. The Collaboration also presented an approach to improving light sensitivity of the SiPMs. 
-
-{\bfThe Committee considers positively the NEXT Collaboration?s reply to the recommendation made in its 6th meeting on the choice of readout technology, in particular the plan to present the Conceptual Design Report (CDR) in time for the Committee Meeting in the Spring of 2011. In particular, the Committee understands that a procedure to make the decision on the readout technology will be defined by the Collaboration in advance of that date. The decision should be based on the all available information at that time, and should take into account that experiments of similar sensitivity are already in more advanced stages of readiness.}  The Committee recommended at the last meeting, and still does, that an intermediate detector be built to test the many new elements in the NEXT-100, for example the 10-atm pressure of Xe gas and the long drift distances/long drift times, as well as the readout system?s operation under these conditions. The Committee also recommends further study of the radon background and radio-purity measurements on construction materials to mitigate against excess background from radioactivity.
-The Committee also welcomes the fact that the Collaboration is developing its Work Plan with milestones that will be integrated into the project management plan and looks forward to receiving the project management plan and the CDR before the next meeting. The Committee applauds the Collaboration for progress report with a much-improved format, but which still lacks budget and schedule information
-
-\paragraph{Summary-2010:} The most critical issue identified by the committee in 2010 was the need to choose a technology for NEXT. As described in previous reports, such a choice was one of the first goals of CUP. At the time there were two possibilities. a) A readout based in Micromegas, pioneered by the group of Zaragoza, and b) an electroluminescent readout, using only light signals, and instrumenting the detector with SiPMs and PMTs. In 2010, the committee observed that the Micromegas technology did not meet the energy resolution requirements for the experiment, but also noticed that the EL option had not shown full feasibility. The committee recommended the construction of an intermediate prototype. Notice that none of the three NEXT prototypes (NEXT-DEMO at IFIC, NEXT-DBDM at LBNL, and NEXT-MM at Zaragoza) were yet fully operational, and the available results were based mostly in small prototypes at IFIC, LBNL and Zaragoza. 
 
 %\begin{quotation}
 %As for the CAFE activity, there is an obvious evaluation criteria, namely the scientific papers to be produced along the five years of the project, including the proceedings of the workshop(s) and/or schools as well as other outreach material.
@@ -338,7 +304,7 @@ Netherlands in June 2014
 \section{\bf \textsf{Problems and suggestions}}
 
 11.- Problems and suggestions
-\bibliographystyle{JHEP}
-\bibliography{biblio}
+%\bibliographystyle{elsarticle-num}
+
 \end{document}
 

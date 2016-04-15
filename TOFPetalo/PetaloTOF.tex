@@ -325,16 +325,17 @@ Figure \ref{fig.FirstPE} shows the arrival time of the first photoelectron in LX
 Notice that $\Delta d_p$~is the difference 
 between the position of the interaction vertex and the position of the SiPM which records the photoelectron. 
 The plot is computed introducing a resolution of 2 mm FWHM both in the transverse coordinates and
-in the DOI (which corresponds to the resolution expected in the LXSC2). The jitter introduced by the DOI correction is:
-
-\begin{equation}
-\delta \Delta t =\Delta z \times (n-1) \times 3.3\ \textrm{ps/mm}
-\label{eq.DOI}
-\end{equation}
-
-For LXe, with n = 1.7, $\delta \Delta t = 4.4$~ps, while for  LYSO, with n = 1.8, $\delta \Delta t = 5.4$~ps in both cases for a DOI resolution $\Delta z = 2$~mm. The effect is, therefore, small. Notice, on the other hand, that a DOI resolution of 2 mm FWHM requires either a double layer of SiPMs (as in the LXSC2) or small monolithic crystals (for example, in reference \cite{VanDamm2011} the authors find a DOI resolution varying between 1 and 4.5 mm FWHM for LYSO crystals of 
+in the DOI (which corresponds to the resolution expected in the LXSC2). The jitter introduced by the DOI correction is
+$
+%\begin{equation}
+\delta \Delta t =\Delta z \times n \times 3.3\ \textrm{ps/mm}
+%\label{eq.DOI}
+%\end{equation}
+$.
+%
+For LXe, with n = 1.7, $\delta \Delta t = 11.2$~ps, while for  LYSO, with n = 1.8, $\delta \Delta t = 11.9$~ps in both cases for a DOI resolution $\Delta z = 2$~mm. Notice, on the other hand, that a DOI resolution of 2 mm FWHM requires either a double layer of SiPMs (as in the LXSC2) or small monolithic crystals (for example, in reference \cite{VanDamm2011} the authors find a DOI resolution varying between 1 and 4.5 mm FWHM for LYSO crystals of 
 $20 \times 20 \times 12 ~{\rm mm^3})$). Instead, a conventional segmented LYSO crystal, 20 mm
-thick, would have a DOI resolution of $2.3 \times 20{\rm mm}/\sqrt{12} = 5.8$~mm, thus 13.3 mm, resulting in a $\delta \Delta t = 35.2$~ps.
+thick, would have a DOI resolution of $2.3 \times 20{\rm mm}/\sqrt{12} = 5.8$~mm, thus 13.3 mm, resulting in a $\delta \Delta t = 79$~ps.
 
 \begin{figure}[!bhtp]
 	\centering
@@ -352,8 +353,7 @@ thick, would have a DOI resolution of $2.3 \times 20{\rm mm}/\sqrt{12} = 5.8$~mm
 \end{figure}
 
  Figure \ref{fig.dtof} shows $\delta \Delta t$ for LXe and LYSO for the ideal case of PDE = 1. The wider LYSO distribution is due to the slower decay constant.  Figure \ref{fig.crt1} shows the CRT as a function of the
- SiPM PDE. The CRT of the LXe setup for PDE=1 is $\sim$10 ps, while the
- intrinsic resolution of the LYSO setup for PDE=1 is $\sim$30 ps.  This values can be taken as the absolute best limit of the CRT in LXe and LYSO. For a PDE of 50\%, (best value of conventional SiPMs) the CRT in LYSO is $\sim$ 45 ps, while for a PDE of 20\% (best value of VUV--sensitive SiPMs) the CRT in LXe is $\sim$ 30 ps.   
+ SiPM PDE. The CRT of the LXe setup for PDE=1 is $\sim$11 ps (thus totally dominated by the uncertainty in DOI) while the intrinsic resolution of the LYSO setup for PDE=1 is $\sim$30 ps, showing a large contribution from the slower decay constant. This values can be taken as the absolute best limit of the CRT in LXe and LYSO. For a PDE of 50\%, (best value of conventional SiPMs) the CRT in LYSO is $\sim$ 45 ps, while for a PDE of 20\% (best value of VUV--sensitive SiPMs) the CRT in LXe is $\sim$ 30 ps.   
 
 \subsection*{Effect of the refraction index}
 \begin{figure}[!bhtp]
